@@ -8,6 +8,14 @@
             $sql->execute();
             return $respuesta=$sql->fetchAll();
         }
+        public function get_clientes_top5(){
+            $clientes=parent::Conexion();
+            parent::set_names();
+            $sql="SELECT * FROM clientes limit 5";
+            $sql=$clientes->prepare($sql);
+            $sql->execute();
+            return $respuesta=$sql->fetchAll();
+        }
         public function get_clientesXid($cli_id){
             $clientes=parent::Conexion();
             parent::set_names();
@@ -40,24 +48,16 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
-        public function update_clientes($cli_id,$cli_nombre, $cli_correo, $cli_telef, $cli_asunto, $cli_mensaje){
+        public function update_clientes($cli_id, $est){
             $clientes=parent::Conexion();
             parent::set_names();
             $sql="UPDATE clientes
                     SET
-                        cli_nombre=?, 
-                        cli_correo=?, 
-                        cli_telef=?, 
-                        cli_asunto=?, 
-                        cli_mensaje=?
+                        est=?
                     WHERE cli_id=?";
             $sql=$clientes->prepare($sql);
-            $sql->bindValue(1,$cli_nombre);
-            $sql->bindValue(2,$cli_correo);
-            $sql->bindValue(3,$cli_telef);
-            $sql->bindValue(4,$cli_asunto);
-            $sql->bindValue(5,$cli_mensaje);
-            $sql->bindValue(6,$cli_id);
+            $sql->bindValue(1,$est);
+            $sql->bindValue(2,$cli_id);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }

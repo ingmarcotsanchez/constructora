@@ -66,6 +66,7 @@
             <thead>
               <tr>
                 <th>Dirección</th>
+                <th>Dirección</th>
                 <th>Área Pri</th>
                 <th>Área Cons</th>
                 <th>Alcobas</th>
