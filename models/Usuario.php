@@ -30,4 +30,10 @@
                 }
             }
         }
+
+        public function get_usuarios(){}
+        public function get_usuariosXid(){}
+        public function insert_usuarios(){}
+        public function update_usuarios(){}
+        public function delete_usuarios(){}
     }
