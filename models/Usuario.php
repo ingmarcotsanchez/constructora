@@ -31,8 +31,23 @@
             }
         }
 
-        public function get_usuarios(){}
-        public function get_usuariosXid(){}
+        public function get_usuarios(){
+            $usuario = parent::Conexion();
+            parent::set_names();
+            $sql="SELECT * FROM usuarios";
+            $sql=$usuario->prepare($sql);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+        public function get_usuariosXid($usu_id){
+            $usuario=parent::Conexion();
+            parent::set_names();
+            $sql="SELECT * FROM usuarios WHERE usu_id=?";
+            $sql=$usuario->prepare($sql);
+            $sql->bindValue(1,$usu_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
         public function insert_usuarios(){}
         public function update_usuarios(){}
         public function delete_usuarios(){}
