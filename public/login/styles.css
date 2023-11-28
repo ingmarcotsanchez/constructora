@@ -5,7 +5,7 @@
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --white-color: hsl(0, 0%, 100%);
-  --black-color: hsl(0, 0%, 0%);
+  --orange-color: hsl(33, 94%, 49%);
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
@@ -47,6 +47,15 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+.text-danger{
+  color: red;
+  text-align: center;
+}
+.text-warning{
+  color: orange;
+  text-align: center;
+
 }
 
 /*=============== LOGIN ===============*/
@@ -112,13 +121,7 @@ img {
   font-weight: var(--font-medium);
   transition: top 0.3s, font-size 0.3s;
 }
-.login__eye {
-  position: absolute;
-  right: 0;
-  top: 18px;
-  z-index: 10;
-  cursor: pointer;
-}
+
 .login__box:nth-child(2) input {
   padding-right: 1.8rem;
 }
@@ -150,20 +153,10 @@ img {
   width: 100%;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: var(--white-color);
+  background-color: var(--orange-color);
   font-weight: var(--font-medium);
   cursor: pointer;
   margin-bottom: 2rem;
-}
-.login__register {
-  text-align: center;
-}
-.login__register a {
-  color: var(--white-color);
-  font-weight: var(--font-medium);
-}
-.login__register a:hover {
-  text-decoration: underline;
 }
 
 /* Input focus move up label */

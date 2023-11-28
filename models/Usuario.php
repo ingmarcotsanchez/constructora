@@ -4,16 +4,16 @@
             $conectar = parent::Conexion();
             parent::set_names();
             if(isset($_POST["enviar"])){
-                $correo = $_POST["mail"];
-                $password = $_POST["passwd"];
-                if(empty($correo) and empty($password)){
-                    header("Location:".Conectar::ruta()."login.php?m=2");
+                $usu_correo = $_POST["email"];
+                $usu_pass = $_POST["pass"];
+                if(empty($usu_correo) and empty($usu_pass)){
+                    header("Location:".Conectar::ruta()."views/login.php?m=2");
                     exit();
                 }else{
                     $sql = "SELECT * FROM usuarios WHERE usu_correo=? AND usu_pass=? AND est=1";
                     $stmt = $conectar->prepare($sql);
-                    $stmt->bindValue(1,$correo);
-                    $stmt->bindValue(2,$password);
+                    $stmt->bindValue(1,$usu_correo);
+                    $stmt->bindValue(2,$usu_pass);
                     $stmt->execute();
                     $resultado = $stmt->fetch();
                     if(is_array($resultado) and count($resultado)>0){
@@ -21,10 +21,10 @@
                         $_SESSION["usu_nombre"]=$resultado["usu_nombre"];
                         $_SESSION["usu_apep"]=$resultado["usu_apep"];
                         $_SESSION["usu_correo"]=$resultado["usu_correo"];
-                        header("Location:".Conectar::ruta()."home.php");
+                        header("Location:".Conectar::ruta()."views/home.php");
                         exit();
                     }else{
-                        header("Location:".Conectar::ruta()."login.php?m=1");
+                        header("Location:".Conectar::ruta()."views/login.php?m=1");
                         exit();
                     }
                 }

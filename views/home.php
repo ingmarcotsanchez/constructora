@@ -2,6 +2,9 @@
   $titulo="Información General";
   date_default_timezone_set('America/Bogota');
   $fecha_actual = date("d-m-Y");
+  define("URL","/constructora/views/");
+  require_once("../config/conexion.php");
+  if(isset($_SESSION["usu_id"])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +28,8 @@
           <img src="../public/dist/img/user.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block text-orange">Alexander Pierce</a>
+          <input type="hidden" id="usu_idx" value="<?php echo $_SESSION["usu_id"]; ?>">
+          <a href="#" class="d-block text-orange"><?php echo $_SESSION["usu_nombre"];?></a>
         </div>
       </div>
       
@@ -177,3 +181,8 @@
 <?php require_once("modulos/js.php");?>
 </body>
 </html>
+<?php
+  }else{
+    header("Location:".Conectar::ruta()."views/404.php");
+  }
+?>

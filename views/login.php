@@ -1,3 +1,13 @@
+<?php
+   require_once("../config/conexion.php");
+   if(isset($_POST["enviar"]) and $_POST["enviar"] == "ok"){
+      require_once("../models/Usuario.php");
+      $usuario = new Usuario();
+      $usuario->login();
+      print_r($usuario);
+   }
+?>
+
 <!DOCTYPE html>
    <html lang="en">
    <head>
@@ -10,25 +20,45 @@
    <body>
       <div class="login">
          <img src="../public/dist/img/login-bg.png" alt="login image" class="login__img">
-         <form action="" class="login__form">
+         <form method="POST" class="login__form">
+            <?php
+               if(isset($_GET["m"])){
+                  switch($_GET["m"]){
+                     case "1":
+                        ?>
+                        <div class="alert text-danger" role="alert">
+                           Los datos ingresados son incorrectos!
+                        </div>
+                        <?php
+                        break;
+                     case "2":
+                        ?>
+                        <div class="alert text-warning" role="alert">
+                           El formulario no puede estar vacio!
+                        </div>
+                        <?php
+                        break;
+                  }
+               }
+            ?>
             <h1 class="login__title">Login</h1>
             <div class="login__content">
                <div class="login__box">
                   <i class='bx bxs-user'></i>
                   <div class="login__box-input">
-                     <input type="email" required class="login__input" id="login-email" placeholder=" ">
+                     <input type="email" class="login__input" id="login-email" name="email" placeholder=" ">
                      <label for="login-email" class="login__label">Usuario</label>
                   </div>
                </div>
                <div class="login__box">
                   <i class='bx bxs-key'></i>
                   <div class="login__box-input">
-                     <input type="password" required class="login__input" id="login-pass" placeholder=" ">
+                     <input type="password" class="login__input" id="login-pass" name="pass" placeholder=" ">
                      <label for="login-pass" class="login__label">Contraseña</label>
-                     <i class="ri-eye-off-line login__eye" id="login-eye"></i>
                   </div>
                </div>
             </div>
+            <input type="hidden" name="enviar" value="ok">
             <button type="submit" class="login__button">Ingresar</button>
          </form>
       </div>
