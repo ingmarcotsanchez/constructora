@@ -17,7 +17,60 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
-        public function insert_proyectos(){}
-        public function update_proyectos(){}
-        public function delete_proyectos(){}
+        public function insert_proyectos($pro_logo,$pro_nombre,$pro_ciudad,$pro_casas,$pro_piscinas,$pro_parques,$pro_tipo,$pro_imagen,$pro_precio){
+            $proyectos=parent::Conexion();
+            parent::set_names();
+            $sql="INSERT INTO mntproyectos(pro_id,pro_logo,pro_nombre,pro_ciudad,pro_casas,pro_piscinas,pro_parques,pro_tipo,pro_imagen,pro_precio,est)
+                    VALUES(NULL,?,?,?,?,?,?,?,?,?,1)";
+            $sql=$proyectos->prepare($sql);
+            $sql->bindValue(1,$pro_logo);
+            $sql->bindValue(2,$pro_nombre);
+            $sql->bindValue(3,$pro_ciudad);
+            $sql->bindValue(4,$pro_casas);
+            $sql->bindValue(5,$pro_piscinas);
+            $sql->bindValue(6,$pro_parques);
+            $sql->bindValue(7,$pro_tipo);
+            $sql->bindValue(8,$pro_imagen);
+            $sql->bindValue(9,$pro_precio);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+        public function update_proyectos($pro_id,$pro_logo,$pro_nombre,$pro_ciudad,$pro_casas,$pro_piscinas,$pro_parques,$pro_tipo,$pro_imagen,$pro_precio){
+            $proyectos=parent::Conexion();
+            parent::set_names();
+            $sql="UPDATE mntproyectos
+                    SET 
+                    pro_logo=?,
+                    pro_nombre=?,
+                    pro_ciudad=?,
+                    pro_casas=?,
+                    pro_piscinas=?,
+                    pro_parques=?,
+                    pro_tipo=?,
+                    pro_imagen=?,
+                    pro_precio=?
+                    WHERE pro_id=?";
+            $sql=$proyectos->prepare($sql);
+            $sql->bindValue(1,$pro_logo);
+            $sql->bindValue(2,$pro_nombre);
+            $sql->bindValue(3,$pro_ciudad);
+            $sql->bindValue(4,$pro_casas);
+            $sql->bindValue(5,$pro_piscinas);
+            $sql->bindValue(6,$pro_parques);
+            $sql->bindValue(7,$pro_tipo);
+            $sql->bindValue(8,$pro_imagen);
+            $sql->bindValue(9,$pro_precio);
+            $sql->bindValue(10,$pro_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+        public function delete_proyectos($pro_id){
+            $proyectos=parent::Conexion();
+            parent::set_names();
+            $sql="UPDATE proyectos SET est=0 WHERE pro_id=?";
+            $sql=$proyectos->prepare($sql);
+            $sql->bindValue(1,$pro_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
     }

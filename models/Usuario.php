@@ -48,7 +48,52 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
-        public function insert_usuarios(){}
-        public function update_usuarios(){}
-        public function delete_usuarios(){}
+        public function insert_usuarios($usu_foto,$usu_nombre,$usu_apep,$usu_apem,$usu_correo,$usu_pass,$usu_telf){
+            $usuario=parent::Conexion();
+            parent::set_names();
+            $sql="INSERT INTO usuarios(usu_id,usu_foto,usu_nombre,usu_apep,usu_apem,usu_correo,usu_pass,usu_telf,est)
+                    VALUES(NULL,?,?,?,?,?,?,?,1)";
+            $sql=$usuario->prepare($sql);
+            $sql->bindValue(1,$usu_foto);
+            $sql->bindValue(2,$usu_nombre);
+            $sql->bindValue(3,$usu_apep);
+            $sql->bindValue(4,$usu_apem);
+            $sql->bindValue(5,$usu_correo);
+            $sql->bindValue(6,$usu_pass);
+            $sql->bindValue(7,$usu_telf);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+        public function update_usuarios($usu_id,$usu_foto,$usu_nombre,$usu_apep,$usu_apem,$usu_correo,$usu_pass,$usu_telf){
+            $usuario=parent::Conexion();
+            parent::set_names();
+            $sql="UPDATE usuarios
+                    SET usu_foto=?,
+                        usu_nombre=?,
+                        usu_apep=?,
+                        usu_apem=?,
+                        usu_correo=?,
+                        usu_pass=?,
+                        usu_telf=?
+                    WHERE usu_id=?";
+            $sql=$usuario->prepare($sql);
+            $sql->bindValue(1,$usu_foto);
+            $sql->bindValue(2,$usu_nombre);
+            $sql->bindValue(3,$usu_apep);
+            $sql->bindValue(4,$usu_apem);
+            $sql->bindValue(5,$usu_correo);
+            $sql->bindValue(6,$usu_pass);
+            $sql->bindValue(7,$usu_telf);
+            $sql->bindValue(8,$usu_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();}
+        public function delete_usuarios($usu_id){
+            $usuario=parent::Conexion();
+            parent::set_names();
+            $sql="UPDATE usuarios SET est=0 WHERE usu_id=?";
+            $sql=$usuario->prepare($sql);
+            $sql->bindValue(1,$usu_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
     }
