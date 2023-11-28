@@ -96,4 +96,22 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
+        public function update_estadoActivo($usu_id){
+            $conectar = parent::Conexion();
+            parent::set_names();
+            $sql = "UPDATE usuarios SET est=1 WHERE usu_id = ?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1,$usu_id);
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
+        public function update_estadoInactivo($usu_id){
+            $conectar = parent::Conexion();
+            parent::set_names();
+            $sql = "UPDATE usuarios SET est=0 WHERE usu_id = ?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1,$usu_id);
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
     }

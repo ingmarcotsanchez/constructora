@@ -48,4 +48,22 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
+        public function update_estadoActivo($gal_id){
+            $conectar = parent::Conexion();
+            parent::set_names();
+            $sql = "UPDATE galeria SET est=1 WHERE gal_id = ?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1,$gal_id);
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
+        public function update_estadoInactivo($gal_id){
+            $conectar = parent::Conexion();
+            parent::set_names();
+            $sql = "UPDATE galeria SET est=0 WHERE gal_id = ?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1,$gal_id);
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
     }

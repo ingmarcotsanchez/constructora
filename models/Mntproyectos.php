@@ -98,4 +98,22 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
+        public function update_estadoActivo($mpro_id){
+            $conectar = parent::Conexion();
+            parent::set_names();
+            $sql = "UPDATE mntproyectos SET est=1 WHERE mpro_id = ?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1,$mpro_id);
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
+        public function update_estadoInactivo($mpro_id){
+            $conectar = parent::Conexion();
+            parent::set_names();
+            $sql = "UPDATE mntproyectos SET est=0 WHERE mpro_id = ?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1,$mpro_id);
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
     }

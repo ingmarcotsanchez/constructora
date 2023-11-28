@@ -73,4 +73,22 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
+        public function update_estadoActivo($pro_id){
+            $conectar = parent::Conexion();
+            parent::set_names();
+            $sql = "UPDATE proyectos SET est=1 WHERE pro_id = ?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1,$pro_id);
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
+        public function update_estadoInactivo($pro_id){
+            $conectar = parent::Conexion();
+            parent::set_names();
+            $sql = "UPDATE proyectos SET est=0 WHERE pro_id = ?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1,$pro_id);
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
     }

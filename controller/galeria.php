@@ -29,9 +29,13 @@
             foreach($datos as $row){
                 $sub_array = array();
                 $sub_array[] = $row["gal_imagen"];
-                $sub_array[] = $row["est"];
-                $sub_array[] = '<button type="button" class="btn btn-outline-warning btn-icon" onClick="editar()" id=""><div><i class="fa fa-edit"></i></div></button>';
-                $sub_array[] = '<button type="button" class="btn btn-outline-danger btn-icon" onClick="eliminar()" id=""><div><i class="fa fa-close"></i></div></button>';
+                if($row["est"] == '1'){
+                    $sub_array[] = "<button type='button' onClick='est_ina(".$row["gal_id"].");' class='btn btn-success btn-sm'>Activo</button>";
+                }else{
+                    $sub_array[] = "<button type='button' onClick='est_act(".$row["gal_id"].");' class='btn btn-danger btn-sm'>Inactivo</button>";
+                }
+                $sub_array[] = '<button type="button" class="btn btn-outline-warning btn-icon" onClick="editar('.$row["gal_id"].')" id="'.$row["gal_id"].'"><div><i class="fa fa-edit"></i></div></button>';
+                $sub_array[] = '<button type="button" class="btn btn-outline-danger btn-icon" onClick="eliminar('.$row["gal_id"].')" id="'.$row["gal_id"].'"><div><i class="fa fa-close"></i></div></button>';
                 $data[] = $sub_array;
             }
             $results = array(
