@@ -30,6 +30,13 @@
             <p>Galería</p>
         </a>
     </li>
+    <li class="nav-header text-orange">PROSPECTOS</li>
+    <li class="nav-item">
+        <a href="clients.php" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>Clientes</p>
+        </a>
+    </li>
     <li class="nav-header text-orange">SALIR</li>
     <li class="nav-item">
         <a href="logout.php" class="nav-link">
