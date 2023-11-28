@@ -61,6 +61,8 @@
               <tr>
                 <th>Imágen</th>
                 <th>Estado</th>
+                <th> </th>
+                <th> </th>
               </tr>
             </thead>
             <tbody>
@@ -69,6 +71,8 @@
                 <td>Internet
                   Explorer 4.0
                 </td>
+                <td> </td>
+                <td> </td>
               </tr>
             </tbody>
           </table>

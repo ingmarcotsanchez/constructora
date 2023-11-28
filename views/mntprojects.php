@@ -64,6 +64,9 @@
                 <th>Área Cons</th>
                 <th>Alcobas</th>
                 <th>Baños</th>
+                <th>Estado</th>
+                <th> </th>
+                <th> </th>
               </tr>
             </thead>
             <tbody>
@@ -75,6 +78,9 @@
                 <td>Win 95+</td>
                 <td> 4</td>
                 <td>X</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
               </tr>
             </tbody>
           </table>

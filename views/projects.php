@@ -67,6 +67,9 @@
                 <th>No. Parques</th>
                 <th>Tipo</th>
                 <th>Precio</th>
+                <th>Estado</th>
+                <th> </th>
+                <th> </th>
               </tr>
             </thead>
             <tbody>
@@ -81,6 +84,9 @@
                 <td>X</td>
                 <td>No vis</td>
                 <td>$200000000</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
               </tr>
             </tbody>
           </table>
