@@ -1,64 +1,63 @@
-<?php $titulo="Nombre de la vista";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Constructores e Ingenieros</title>
-  <?php require_once("views/modulos/head.php"); ?>
+  <link rel="stylesheet" href="public/css/style.css">
 </head>
-<body class="hold-transition sidebar-mini">
-<div class="wrapper">
-  <?php require_once("views/modulos/header.php");?>
-  <aside class="main-sidebar sidebar-light-primary elevation-4">
-    <a href="#" class="brand-link">
-      <img src="public/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">G & G SAS</span>
-    </a>
-    <div class="sidebar">
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block text-orange">Alexander Pierce</a>
-        </div>
-      </div>
-      
-      <nav class="mt-2">
-        <?php require_once("views/modulos/menu.php");?>
+<body>
+  <header class="header">
+    <div class="menu container">
+      <a href="index.php" class="logo"><img src="public/img/logo.png" alt="logo de la empresa"></a>
+      <input type="checkbox" id="menu">
+      <label for="menu">
+        <img src="public/img/menu.svg" alt="menu" class="menu-icon">
+      </label>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Proyectos</a></li>
+          <li><a href="#">Contactenos</a></li>
+        </ul>
       </nav>
     </div>
-  </aside>
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2 bg-white p-4">
-          <div class="col-sm-6">
-            <h1><?php echo $titulo; ?></h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#" class="text-orange">Inicio</a></li>
-              <li class="breadcrumb-item active"><?php echo $titulo; ?></li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+    <div class="header-content container">
+      <div class="header-text">
+        <h1>Constructores e Ingenieros</h1>
+        <h2>G & G SAS</h2>
+        <p class="text-parrafo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error numquam porro nobis eaque tenetur architecto corrupti incidunt ad repellat laborum? Ad suscipit sed vel perspiciatis esse nam, repellat eius id?</p>
+        <a href="#" class="btn btn-cite">Agendar una cita</a>
+      </div>
+    </div>
+  </header>
+  <section id="services">
+    <div class="services-content container">
 
-    <!-- Main content -->
-    <section class="content">
+    </div>
+  </section>
+  <section id="projects">
+    <div class="projects-content container">
 
-      <!-- Contenido de cada vista -->
+    </div>
+  </section>
+  <section id="gallery">
+    <div class="gallery-content container">
 
-      <!-- Fin del contenido de la vista -->
+    </div>
+  </section>
+  <section class="contact">
+    <div class="contact-content container">
 
-    </section>
-  </div>
-  <?php require_once("views/modulos/footer.php");?>
-</div>
-<?php require_once("views/modulos/js.php");?>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-content container">
+
+    </div>
+  </footer>
+  <script src="public/js/main.js"></script>
 </body>
 </html>
