@@ -7,7 +7,7 @@
   <?php require_once("views/modulos/head-web.php");?>
 </head>
 <body>
-  <header class="header">
+  <header class="header" id="header">
     <div class="menu container">
       <a href="index.php" class="logo"><img src="public/img/logo.png" alt="logo de la empresa"></a>
       <input type="checkbox" id="menu">
@@ -22,6 +22,7 @@
           <li><a href="#projects">Proyectos</a></li>
           <li><a href="#gallery">Galería</a></li>
           <li><a href="#contact">Contáctenos</a></li>
+          <li><a class="btn-admon" href="views/login.php">Administración</a></li>
         </ul>
       </nav>
     </div>
@@ -268,6 +269,7 @@
       <?php require_once("views/modulos/copy.php");?>
     </div>
   </footer>
+  <script src="public/js/main.js"></script>
   <script>
         ScrollReveal({ 
             reset: true,

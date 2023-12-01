@@ -19,7 +19,7 @@
 html {
     scroll-behavior: smooth; /*Desliza al click*/
 }
-/*html::-webkit-scrollbar{
+html::-webkit-scrollbar{
     width: 0.5rem;
 }
 html::-webkit-scrollbar-track{
@@ -28,7 +28,7 @@ html::-webkit-scrollbar-track{
 html::-webkit-scrollbar-thumb{
     background: var(--orange);
     border-radius: 5rem;
-}*/
+}
 body, a{
     font-family: var(--poppins);
     color: var(--white);
@@ -55,6 +55,14 @@ h3{
     font-size: 1.2rem;
     font-family: var(--roboto);
     display: inline-block;
+}
+.btn-admon{
+    padding: 10px 20px;
+    color: 
+        rgba(245,99,72,1);
+    font-size: 1.2rem;
+    font-family: var(--roboto);
+    cursor: pointer;
 }
 .btn-cite,.btn-contact{
     background: linear-gradient(
@@ -141,13 +149,15 @@ h3{
     padding: 10px;
 }
 .menu{
-    position: absolute;
+    position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
     right: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 100;
 }
 .menu .navbar ul li{
     position: relative;
@@ -190,7 +200,6 @@ h3{
     padding: 100px 0;
 }
 .services,.gallery{
-    background-color: #f0f0f0;
     color: #161515;
 }
 .projects-container{
@@ -597,14 +606,14 @@ footer .footer-information{
 }
 @media(max-width:990px){
     .menu{
-        padding: 20px;
+        padding: 1px;
     }
     .menu label{
         display: initial;
         background-color: #F28737;
         width: 30px;
         height: 30px;
-    text-align: center;
+        text-align: center;
     }
     .menu .navbar{
         position: absolute;

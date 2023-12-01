@@ -19,7 +19,7 @@
    </head>
    <body>
       <div class="login">
-         <img src="../public/dist/img/login-bg.png" alt="login image" class="login__img">
+         <img src="../public/img/header.jpg" alt="login image" class="login__img">
          <form method="POST" class="login__form">
             <?php
                if(isset($_GET["m"])){
