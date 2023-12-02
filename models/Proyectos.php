@@ -3,7 +3,7 @@
         public function get_proyectos(){
             $proyectos=parent::Conexion();
             parent::set_names();
-            $sql="SELECT * FROM galeria";
+            $sql="SELECT * FROM proyectos";
             $sql=$proyectos->prepare($sql);
             $sql->execute();
             return $resultado=$sql->fetchAll();

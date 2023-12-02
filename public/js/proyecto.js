@@ -1,22 +1,22 @@
 function init(){
-    $("#galeria_form").on("submit",function(e){
+    $("#proyecto_form").on("submit",function(e){
         guardaryeditar(e);	
     });
 }
 
 function guardaryeditar(e){
+    //console.log("prueba");
     e.preventDefault();
-    var formData = new FormData($("#galeria_form")[0]);
+    var formData = new FormData($("#proyecto_form")[0]);
     $.ajax({
-        url: "/constructora/controller/galeria.php?opc=guardaryeditar",
+        url: "/constructora/controller/proyecto.php?opc=guardaryeditar",
         type: "POST",
         data: formData,
         contentType: false,
         processData: false,
         success: function(data){
-            console.log(data);
-            $('#galeria_data').DataTable().ajax.reload();
-            $('#modalcrearGaleria').modal('hide');
+            $('#proyecto_data').DataTable().ajax.reload();
+            $('#modalcrearProyectos').modal('hide');
             Swal.fire({
                 title: 'Correcto!',
                 text: 'Se Registro Correctamente',
@@ -27,9 +27,9 @@ function guardaryeditar(e){
         }
     });
 }
-
 $(document).ready(function(){
-    $('#galeria_data').DataTable({
+   
+    $('#proyecto_data').DataTable({
         "aProcessing": true,
         "aServerSide": true,
         dom: 'Bfrtip',
@@ -38,7 +38,7 @@ $(document).ready(function(){
             'csvHtml5',
         ],
         "ajax":{
-            url:"/constructora/controller/galeria.php?opc=listar",
+            url:"/constructora/controller/proyecto.php?opc=listar",
             type:"post"
         },
         "bDestroy": true,
@@ -71,26 +71,35 @@ $(document).ready(function(){
             }
         },
     });
+
 });
 
 function nuevo(){
-    $('#titulo_modal').html('Nueva Imagen');
-    $('#galeria_form')[0].reset();
-    $('#modalcrearGaleria').modal('show');
+    $('#titulo_modal').html('Nuevo Proyecto');
+    //$('#proyecto_form')[0].reset();
+    $('#modalcrearProyectos').modal('show');
 }
 
-function editar(gal_id){
-    $.post("/constructora/controller/galeria.php?opc=mostrar",{gal_id:gal_id},function (data){
+function editar(pro_id){
+    $.post("./../controller/proyecto.php?opc=mostrar",{pro_id:pro_id},function (data){
         data = JSON.parse(data);
-        //console.log(data);
-        $('#gal_id').val(data.gal_id);
-        $('#gal_imagen').val(data.gal_imagen);
+        console.log(data);
+        $('#pro_id').val(data.pro_id);
+        $('#pro_logo').val(data.pro_logo);
+        $('#pro_nombre').val(data.pro_nombre);
+        $('#pro_ciudad').val(data.pro_ciudad);
+        $('#pro_casas').val(data.pro_casas);
+        $('#pro_piscinas').val(data.pro_piscinas);
+        $('#pro_parques').val(data.pro_parques);
+        $('#pro_tipo').val(data.pro_tipo);
+        $('#pro_imagen').val(data.pro_imagen);
+        $('#pro_precio').val(data.pro_precio);
     });
-    $('#titulo_modal').html('Editar Rol');
-    $('#modalcrearGaleria').modal('show');
+    $('#titulo_modal').html('Editar Proyecto');
+    $('#modalcrearProyectos').modal('show');
 }
 
-function eliminar(gal_id){
+function eliminar(pro_id){
     Swal.fire({
         title: 'Eliminar!',
         text: 'Desea eleminar el Registro?',
@@ -100,8 +109,8 @@ function eliminar(gal_id){
         cancelButtonText: 'Cancelar',
     }).then((result)=>{
         if(result.value){
-            $.post("/constructora/controller/galeria.php?opc=eliminar",{gal_id:gal_id},function (data){
-                $('#galeria_data').DataTable().ajax.reload();
+            $.post("/constructora/controller/proyecto.php?opc=eliminar",{pro_id:pro_id},function (data){
+                $('#proyecto_data').DataTable().ajax.reload();
                 Swal.fire({
                     title: 'Correcto!',
                     text: 'Se Elimino Correctamente',
@@ -113,15 +122,15 @@ function eliminar(gal_id){
     });
 }
 
-function gal_act(gal_id){
-    $.post("/constructora/controller/galeria.php?opc=activo",{gal_id:gal_id},function (data){
-        $('#galeria_data').DataTable().ajax.reload();
+function pro_act(pro_id){
+    $.post("/constructora/controller/proyecto.php?opc=activo",{pro_id:pro_id},function (data){
+        $('#proyecto_data').DataTable().ajax.reload();
     });
 }
 
-function gal_ina(gal_id){
-    $.post("/constructora/controller/galeria.php?opc=inactivo",{gal_id:gal_id},function (data){
-        $('#galeria_data').DataTable().ajax.reload();
+function pro_ina(pro_id){
+    $.post("/constructora/controller/proyecto.php?opc=inactivo",{pro_id:pro_id},function (data){
+        $('#proyecto_data').DataTable().ajax.reload();
     });
 }
 

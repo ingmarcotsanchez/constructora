@@ -59,10 +59,10 @@
 
       <div class="card">
         <div class="card-header">
-          <button type="submit" class="btn btn-outline-secondary">Nuevo</button>
+          <button type="button" class="btn btn-outline-secondary" onclick="nuevo()">Nuevo</button>
         </div>
         <div class="card-body">
-          <table id="example1" class="table table-bordered table-striped">
+          <table id="proyecto_data" class="table table-bordered table-striped">
             <thead>
               <tr>
                 <th>Logo</th>
@@ -79,21 +79,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
-                </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td> 4</td>
-                <td>X</td>
-                <td>No vis</td>
-                <td>$200000000</td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-              </tr>
+              
             </tbody>
           </table>
         </div>
@@ -103,25 +89,11 @@
   </div>
   <?php require_once("modulos/footer.php");?>
 </div>
+<?php require_once("projectsModal.php"); ?>
 <?php require_once("modulos/js.php");?>
+<script type="text/javascript" src="../public/js/proyecto.js"></script>
 <!-- Page specific script -->
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["csv", "excel", "pdf", "print"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
+
 </body>
 </html>
 <?php

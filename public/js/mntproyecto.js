@@ -1,22 +1,22 @@
 function init(){
-    $("#galeria_form").on("submit",function(e){
+    $("#mntproyecto_form").on("submit",function(e){
         guardaryeditar(e);	
     });
 }
 
 function guardaryeditar(e){
+    //console.log("prueba");
     e.preventDefault();
-    var formData = new FormData($("#galeria_form")[0]);
+    var formData = new FormData($("#mntproyecto_form")[0]);
     $.ajax({
-        url: "/constructora/controller/galeria.php?opc=guardaryeditar",
+        url: "/constructora/controller/mntproyectos.php?opc=guardaryeditar",
         type: "POST",
         data: formData,
         contentType: false,
         processData: false,
         success: function(data){
-            console.log(data);
-            $('#galeria_data').DataTable().ajax.reload();
-            $('#modalcrearGaleria').modal('hide');
+            $('#mntproyecto_data').DataTable().ajax.reload();
+            $('#modalcrearMntProyectos').modal('hide');
             Swal.fire({
                 title: 'Correcto!',
                 text: 'Se Registro Correctamente',
@@ -27,9 +27,9 @@ function guardaryeditar(e){
         }
     });
 }
-
 $(document).ready(function(){
-    $('#galeria_data').DataTable({
+   
+    $('#mntproyecto_data').DataTable({
         "aProcessing": true,
         "aServerSide": true,
         dom: 'Bfrtip',
@@ -38,7 +38,7 @@ $(document).ready(function(){
             'csvHtml5',
         ],
         "ajax":{
-            url:"/constructora/controller/galeria.php?opc=listar",
+            url:"/constructora/controller/mntproyectos.php?opc=listar",
             type:"post"
         },
         "bDestroy": true,
@@ -71,26 +71,44 @@ $(document).ready(function(){
             }
         },
     });
+
 });
 
 function nuevo(){
-    $('#titulo_modal').html('Nueva Imagen');
-    $('#galeria_form')[0].reset();
-    $('#modalcrearGaleria').modal('show');
+    $('#titulo_modal').html('Nuevo Proyecto');
+    $('#mntproyecto_form')[0].reset();
+    $('#modalcrearMntProyectos').modal('show');
 }
 
-function editar(gal_id){
-    $.post("/constructora/controller/galeria.php?opc=mostrar",{gal_id:gal_id},function (data){
+function editar(mpro_id){
+    $.post("./../controller/mntproyecto.php?opc=mostrar",{mpro_id:mpro_id},function (data){
         data = JSON.parse(data);
-        //console.log(data);
-        $('#gal_id').val(data.gal_id);
-        $('#gal_imagen').val(data.gal_imagen);
+        console.log(data);
+        $('#mpro_id').val(data.mpro_id);
+        $('#mpro_video').val(data.mpro_video);
+        $('#pro_id').val(data.pro_id).trigger('change');;
+        $('#mpro_descripcion').val(data.mpro_descripcion);
+        $('#mpro_direccion').val(data.mpro_direccion);
+        $('#mpro_privada').val(data.mpro_privada);
+        $('#mpro_const').val(data.mpro_const);
+        $('#mpro_alcobas').val(data.mpro_alcobas);
+        $('#mpro_bannos').val(data.mpro_bannos);
+        $('#mpro_imagen1').val(data.mpro_imagen1);
+        $('#mpro_imagen2').val(data.mpro_imagen2);
+        $('#mpro_imagen3').val(data.mpro_imagen3);
+        $('#mpro_imagen4').val(data.mpro_imagen4);
+        $('#mpro_imagen5').val(data.mpro_imagen5);
+        $('#mpro_imagen6').val(data.mpro_imagen6);
+        $('#mpro_imagen7').val(data.mpro_imagen7);
+        $('#mpro_imagen8').val(data.mpro_imagen8);
+        $('#mpro_imagen9').val(data.mpro_imagen9);
+        $('#mpro_imagen10').val(data.mpro_imagen10);
     });
-    $('#titulo_modal').html('Editar Rol');
-    $('#modalcrearGaleria').modal('show');
+    $('#titulo_modal').html('Editar Proyecto');
+    $('#modalcrearMntProyectos').modal('show');
 }
 
-function eliminar(gal_id){
+function eliminar(mpro_id){
     Swal.fire({
         title: 'Eliminar!',
         text: 'Desea eleminar el Registro?',
@@ -100,8 +118,8 @@ function eliminar(gal_id){
         cancelButtonText: 'Cancelar',
     }).then((result)=>{
         if(result.value){
-            $.post("/constructora/controller/galeria.php?opc=eliminar",{gal_id:gal_id},function (data){
-                $('#galeria_data').DataTable().ajax.reload();
+            $.post("/constructora/controller/mntproyecto.php?opc=eliminar",{mpro_id:mpro_id},function (data){
+                $('#mntproyecto_data').DataTable().ajax.reload();
                 Swal.fire({
                     title: 'Correcto!',
                     text: 'Se Elimino Correctamente',
@@ -113,15 +131,15 @@ function eliminar(gal_id){
     });
 }
 
-function gal_act(gal_id){
-    $.post("/constructora/controller/galeria.php?opc=activo",{gal_id:gal_id},function (data){
-        $('#galeria_data').DataTable().ajax.reload();
+function mpro_act(mpro_id){
+    $.post("/constructora/controller/mntproyecto.php?opc=activo",{mpro_id:mpro_id},function (data){
+        $('#mntproyecto_data').DataTable().ajax.reload();
     });
 }
 
-function gal_ina(gal_id){
-    $.post("/constructora/controller/galeria.php?opc=inactivo",{gal_id:gal_id},function (data){
-        $('#galeria_data').DataTable().ajax.reload();
+function mpro_ina(mpro_id){
+    $.post("/constructora/controller/mntproyecto.php?opc=inactivo",{mpro_id:mpro_id},function (data){
+        $('#mntproyecto_data').DataTable().ajax.reload();
     });
 }
 

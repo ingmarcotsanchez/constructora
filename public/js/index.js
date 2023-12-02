@@ -19,7 +19,7 @@ function guardaryeditar(e){
             if (data==1){
                 console.log(data);
                 $('#cliente_data').DataTable().ajax.reload();
-
+                $('#modalcrearClientes').modal('hide');
                 Swal.fire({
                     title: 'Correcto!',
                     text: 'Se Registro Correctamente',
