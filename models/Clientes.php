@@ -48,16 +48,26 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
-        public function update_clientes($cli_id, $est){
+        public function update_clientes($cli_id,$cli_nombre, $cli_correo, $cli_telef, $cli_asunto, $cli_mensaje, $est){
             $clientes=parent::Conexion();
             parent::set_names();
             $sql="UPDATE clientes
                     SET
+                        cli_nombre=?, 
+                        cli_correo=?, 
+                        cli_telef=?, 
+                        cli_asunto=?, 
+                        cli_mensaje=?,
                         est=?
                     WHERE cli_id=?";
             $sql=$clientes->prepare($sql);
             $sql->bindValue(1,$est);
-            $sql->bindValue(2,$cli_id);
+            $sql->bindValue(2,$cli_nombre);
+            $sql->bindValue(3,$cli_correo);
+            $sql->bindValue(4,$cli_telef);
+            $sql->bindValue(5,$cli_asunto);
+            $sql->bindValue(6,$cli_mensaje);
+            $sql->bindValue(7,$cli_id);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }

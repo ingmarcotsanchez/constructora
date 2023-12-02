@@ -85,6 +85,7 @@
   </div>
   <?php require_once("modulos/footer.php");?>
 </div>
+<?php require_once("clientsModal.php"); ?>
 <?php require_once("modulos/js.php");?>
 <script type="text/javascript" src="../public/js/index.js"></script>
 </body>

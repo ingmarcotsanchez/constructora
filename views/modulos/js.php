@@ -17,3 +17,9 @@
 <script src="../public/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="../public/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="../public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- sweetalert -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Select2 -->
+<script src="../public/plugins/select2/js/select2.full.min.js"></script>
+<!-- Sumernote -->
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>

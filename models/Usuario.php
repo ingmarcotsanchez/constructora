@@ -64,6 +64,28 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
+        public function update_perfil($usu_id,$usu_nombre,$usu_apep,$usu_apem,$usu_correo,$usu_pass,$usu_telf){
+            $usuario=parent::Conexion();
+            parent::set_names();
+            $sql="UPDATE usuarios
+                    SET usu_nombre=?,
+                        usu_apep=?,
+                        usu_apem=?,
+                        usu_correo=?,
+                        usu_pass=?,
+                        usu_telf=?
+                    WHERE usu_id=?";
+            $sql=$usuario->prepare($sql);
+            $sql->bindValue(1,$usu_nombre);
+            $sql->bindValue(2,$usu_apep);
+            $sql->bindValue(3,$usu_apem);
+            $sql->bindValue(4,$usu_correo);
+            $sql->bindValue(5,$usu_pass);
+            $sql->bindValue(6,$usu_telf);
+            $sql->bindValue(7,$usu_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
         public function update_usuarios($usu_id,$usu_foto,$usu_nombre,$usu_apep,$usu_apem,$usu_correo,$usu_pass,$usu_telf){
             $usuario=parent::Conexion();
             parent::set_names();
@@ -86,7 +108,8 @@
             $sql->bindValue(7,$usu_telf);
             $sql->bindValue(8,$usu_id);
             $sql->execute();
-            return $resultado=$sql->fetchAll();}
+            return $resultado=$sql->fetchAll();
+        }
         public function delete_usuarios($usu_id){
             $usuario=parent::Conexion();
             parent::set_names();

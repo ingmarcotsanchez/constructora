@@ -104,9 +104,9 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-header border-0">
-                <h3 class="card-title text-bold text-orange">Últimos clientes interesados</h3>
+                <h3 class="card-title text-bold text-orange">TOP 5 - Últimos clientes interesados</h3>
               </div>
-              <div class="card-body table-responsive p-0">
+              <div class="card-body table-responsive p-4">
                 <table id="cliente_data" class="table table-striped table-valign-middle">
                   <thead>
                     <tr>

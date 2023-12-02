@@ -65,52 +65,40 @@
             <div class="row">
               <div class="col-4">
                   <div class="form-group">
-                      <label for="nombre">Nombre</label>
-                      <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese su nombre">
+                      <label for="usu_nombre">Nombre</label>
+                      <input type="text" class="form-control" name="usu_nombre" id="usu_nombre" placeholder="Ingrese su nombre">
                   </div>
               </div>
               <div class="col-4">
                   <div class="form-group">
-                      <label for="ape_paterno">Apellido Paterno</label>
-                      <input type="text" class="form-control" name="ape_paterno" id="ape_paterno" placeholder="Ingrese su apellido">
+                      <label for="usu_apep">Apellido Paterno</label>
+                      <input type="text" class="form-control" name="usu_apep" id="usu_apep" placeholder="Ingrese su apellido">
                   </div>
               </div>
               <div class="col-4">
                   <div class="form-group">
-                      <label for="ape_materno">Apellido Materno</label>
-                      <input type="text" class="form-control" name="ape_materno" id="ape_materno" placeholder="Ingrese su apellido">
+                      <label for="usu_apem">Apellido Materno</label>
+                      <input type="text" class="form-control" name="usu_apem" id="usu_apem" placeholder="Ingrese su apellido">
                   </div>
               </div>
             </div>
             <div class="row">
-              <div class="col-6">
+              <div class="col-12">
                   <div class="form-group">
-                      <label for="correo">Correo Electrónico</label>
-                      <input type="email" class="form-control" name="correo" id="correo" placeholder="Ingrese su nombre" readonly>
+                      <label for="usu_correo">Correo Electrónico</label>
+                      <input type="email" class="form-control" name="usu_correo" id="usu_correo" placeholder="Ingrese su nombre" readonly>
                   </div>
               </div>
               <div class="col-6">
                   <div class="form-group">
-                      <label for="password">Contraseña</label>
-                      <input type="text" class="form-control" name="password" id="password" placeholder="Ingrese su apellido">
-                  </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-                  <div class="form-group">
-                  <label>Sexo</label>
-                  <select class="form-control select2" name="sexo" id="sexo" data-placeholder="Seleccione">
-                      <option label="Seleccione"></option>
-                      <option value="F">Femenino</option>
-                      <option value="M">Masculino</option>
-                  </select>
+                      <label for="usu_pass">Contraseña</label>
+                      <input type="text" class="form-control" name="usu_pass" id="usu_pass" placeholder="Ingrese su apellido">
                   </div>
               </div>
               <div class="col-6">
                   <div class="form-group">
-                      <label for="telefono">Teléfono</label>
-                      <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Ingrese su teléfono">
+                      <label for="usu_telf">Teléfono</label>
+                      <input type="text" class="form-control" name="usu_telf" id="usu_telf" placeholder="Ingrese su teléfono">
                   </div>
               </div>
             </div>
@@ -125,6 +113,7 @@
   <?php require_once("modulos/footer.php");?>
 </div>
 <?php require_once("modulos/js.php");?>
+<script type="text/javascript" src="../public/js/perfil.js"></script>
 </body>
 </html>
 <?php

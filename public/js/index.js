@@ -1,14 +1,15 @@
 function init(){
     $("#cliente_form").on("submit",function(e){
-        guardar(e);	
+        guardaryeditar(e);	
     });
 }
 
-function guardar(e){
+function guardaryeditar(e){
+    console.log("prueba");
     e.preventDefault();
     var formData = new FormData($("#cliente_form")[0]);
     $.ajax({
-        url: "../../controller/cliente.php?opc=guardaryeditar",
+        url: "/constructora/controller/cliente.php?opc=guardaryeditar",
         type: "POST",
         data: formData,
         contentType: false,
@@ -28,7 +29,28 @@ function guardar(e){
 }
 
 $(document).ready(function(){
-
+    $('#cli_mensaje').summernote({
+        height: 200,
+        lang: "es-ES",
+        callbacks: {
+            onPaste: function (e) {
+                console.log("Text detect...");
+            }
+        },
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+        ]
+    });
+    $('#cli_mensaje').summernote({
+        height: 200,
+        lang: "es-ES"
+    });
+    $('#cli_mensaje').summernote('disable');
     $('#cliente_data').DataTable({
         "aProcessing": true,
         "aServerSide": true,
@@ -38,7 +60,7 @@ $(document).ready(function(){
             'csvHtml5',
         ],
         "ajax":{
-            url:"./../controller/cliente.php?opc=listar",
+            url:"/constructora/controller/cliente.php?opc=listar",
             type:"post"
         },
         "bDestroy": true,
@@ -77,8 +99,13 @@ $(document).ready(function(){
 function editar(cli_id){
     $.post("./../controller/cliente.php?opc=mostrar",{cli_id:cli_id},function (data){
         data = JSON.parse(data);
-        //console.log(data);
+        console.log(data);
         $('#cli_id').val(data.cli_id);
+        $('#cli_nombre').val(data.cli_nombre);
+        $('#cli_correo').val(data.cli_correo);
+        $('#cli_telef').val(data.cli_telef);
+        $('#cli_asunto').val(data.cli_asunto);
+        $('#cli_mensaje').val(data.cli_mensaje);
         $('#est').val(data.est);
     });
     $('#titulo_modal').html('Editar Cliente');
