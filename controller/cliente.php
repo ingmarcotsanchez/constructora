@@ -23,6 +23,24 @@
         case "eliminar":
             $clientes->delete_clientes($_POST["cli_id"]);
             break;
+        case "top5":
+            $datos=$clientes->get_clientes_top5();
+            $data = Array();
+            foreach($datos as $row){
+                $sub_array = array();
+                $sub_array[] = $row["cli_nombre"];
+                $sub_array[] = $row["cli_correo"];
+                $sub_array[] = $row["cli_telef"];
+                $data[] = $sub_array;
+            }
+            $results = array(
+                "sEcho"=>1,
+                "iTotalRecords"=>count($data),
+                "iTotalDisplayRecords"=>count($data),
+                "aaData"=>$data
+            );
+            echo json_encode($results);
+            break;
         case "listar":
             $datos=$clientes->get_clientes();
             $data = Array();
@@ -34,7 +52,7 @@
                 $sub_array[] = $row["cli_asunto"];
                 $sub_array[] = $row["cli_mensaje"];
                 if($row["est"] == 1){
-                    $sub_array[] = "<p style='color:#28a745'>Interesado</p>"; 
+                    $sub_array[] = "<p style='color:#28a745;font-weight:bold;'>Interesado</p>"; 
                 }elseif ($row["est"] == 2){
                     $sub_array[] = "<p style='color:#20c997'>Citado</p>";  
                 }elseif ($row["aut_cumple"] == 3){
@@ -46,7 +64,6 @@
                 }
              
                 $sub_array[] = '<button type="button" class="btn btn-outline-warning btn-icon" onClick="editar('.$row["cli_id"].')" id="'.$row["cli_id"].'"><div><i class="fa fa-edit"></i></div></button>';
-                $sub_array[] = '<button type="button" class="btn btn-outline-danger btn-icon" onClick="eliminar('.$row["cli_id"].')" id="'.$row["cli_id"].'"><div><i class="fa fa-close"></i></div></button>';
                 $data[] = $sub_array;
             }
             $results = array(

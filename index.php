@@ -211,31 +211,32 @@
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.865844257744!2d-74.83930602559319!3d4.246358195727535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f2920526d1bb9%3A0x1fab6d695a4322e3!2sCondominio%20villa%20esperanza%202!5e0!3m2!1ses-419!2sco!4v1701403738827!5m2!1ses-419!2sco" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="contact-form">
-          <form class="main-box">
+          <form class="main-box" method="post" id="cliente_form">
+            <input type="hidden" id="cli_id" name="cli_id">
             <div class="input-box">
                 <span class="icon"><i class='bx bxs-id-card'></i></span>
-                <input type="text" name="" id="names" required>
+                <input type="text" id="cli_nombre" name="cli_nombre" required>
                 <label for="names">Nombres y Apellidos</label>
             </div>
             <div class="input-box">
                 <span class="icon"><i class='bx bxs-phone-call'></i></span>
-                <input type="text" name="" id="Celular" required>
+                <input type="text" id="cli_telef" name="cli_telef" required>
                 <label for="Celular">Celular</label>
             </div>
             <div class="input-box">
                 <span class="icon"><i class='bx bxs-envelope'></i></span>
-                <input type="email" name="" id="email" required>
+                <input type="email" id="cli_correo" name="cli_correo" required>
                 <label for="email">Email</label>
             </div>
             <div class="input-box">
                 <span class="icon"><i class='bx bxs-archive-out'></i></span>
-                <input type="text" name="" id="hv" required>
-                <label for="hv">Hoja de Vida</label>
+                <input type="text" id="cli_asunto" name="cli_asunto" required>
+                <label for="asunto">Asunto</label>
             </div>
             <div class="input-area">
-                <textarea id="" cols="154" rows="5" placeholder="Comentarios"></textarea>
+                <textarea id="cli_mensaje" name="cli_mensaje" cols="154" rows="5" placeholder="Comentarios"></textarea>
             </div>
-            <button type="button" class="btn btn-form">Enviar</button>
+            <button type="submit" name="action" id="#" value="add" class="btn btn-form">Enviar</button>
           </form>
         </div>
       </div>
@@ -270,6 +271,7 @@
     </div>
   </footer>
   <script src="public/js/main.js"></script>
+  <script src="public/js/index.js"></script>
   <script>
         ScrollReveal({ 
             reset: true,

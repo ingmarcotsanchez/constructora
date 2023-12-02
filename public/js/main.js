@@ -1,4 +1,4 @@
-var header = document.getElementClassName('.menu');
+var header = document.getElementById('menu');
 window.addEventListener('scroll',()=>{
     var scroll = window.scrollY;
 });

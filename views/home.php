@@ -107,7 +107,7 @@
                 <h3 class="card-title text-bold text-orange">Últimos clientes interesados</h3>
               </div>
               <div class="card-body table-responsive p-0">
-                <table class="table table-striped table-valign-middle">
+                <table id="cliente_data" class="table table-striped table-valign-middle">
                   <thead>
                     <tr>
                       <th>Nombre del cliente</th>
@@ -116,59 +116,9 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>
-                        <img src="../public/dist/img/user.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                        Nombres y apellidos
-                      </td>
-                      <td>nombres.apellidos@gmail.com</td>
-                      <td>
-                        310 111 1111
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="../public/dist/img/user.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                        Nombres y apellidos
-                      </td>
-                      <td>nombres.apellidos@gmail.com</td>
-                      <td>
-                        310 111 1111
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="../public/dist/img/user.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                        Nombres y apellidos
-                      </td>
-                      <td>nombres.apellidos@gmail.com</td>
-                      <td>
-                        310 111 1111
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="../public/dist/img/user.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                        Nombres y apellidos
-                      </td>
-                      <td>nombres.apellidos@gmail.com</td>
-                      <td>
-                        310 111 1111
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="../public/dist/img/user.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                        Nombres y apellidos
-                      </td>
-                      <td>nombres.apellidos@gmail.com</td>
-                      <td>
-                        310 111 1111
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
+                    
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -179,6 +129,7 @@
   <?php require_once("modulos/footer.php");?>
 </div>
 <?php require_once("modulos/js.php");?>
+<script src="../public/js/home.js"></script>
 </body>
 </html>
 <?php
