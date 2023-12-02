@@ -20,6 +20,11 @@
         public function insert_galeria($gal_imagen){
             $galeria=parent::Conexion();
             parent::set_names();
+            $img= new Galeria();
+            $gal_imagen = '';
+            if ($_FILES["gal_imagen"]["name"]!=''){
+                $gal_imagen=$img->upload_file_galeria();
+            }
             $sql="INSERT INTO galeria (gal_id, gal_imagen, est) VALUES(NULL,?,1)";
             $sql=$galeria->prepare($sql);
             $sql->bindValue(1,$gal_imagen);
@@ -65,5 +70,14 @@
             $sql->bindValue(1,$gal_id);
             $sql->execute();
             return $resultado = $sql->fetchAll();
+        }
+        public function upload_file_galeria(){
+            if(isset($_FILES["gal_imagen"])){
+                $extension = explode('.', $_FILES['gal_imagen']['name']);
+                $new_name = rand() . '.' . $extension[1];
+                $destination = '../public/img/galeria/' . $new_name;
+                move_uploaded_file($_FILES['gal_imagen']['tmp_name'], $destination);
+                return "../public/img/galeria/".$new_name;
+            }
         }
     }

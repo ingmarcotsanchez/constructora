@@ -6,6 +6,7 @@
     switch($_GET["opc"]){
         case "guardaryeditar":
             if(empty($_POST["gal_id"])){
+                //$imagen=$_FILES['gal_imagen']
                 $galeria->insert_galeria($_POST["gal_imagen"]);
             }else{
                 $galeria->update_galeria($_POST["gal_id"],$_POST["gal_imagen"]);
@@ -24,9 +25,9 @@
                 $sub_array = array();
                 $sub_array[] = $row["gal_imagen"];
                 if($row["est"] == '1'){
-                    $sub_array[] = "<button type='button' onClick='est_ina(".$row["gal_id"].");' class='btn btn-success btn-sm'>Activo</button>";
+                    $sub_array[] = "<button type='button' onClick='gal_ina(".$row["gal_id"].");' class='btn btn-success btn-sm'>Activo</button>";
                 }else{
-                    $sub_array[] = "<button type='button' onClick='est_act(".$row["gal_id"].");' class='btn btn-danger btn-sm'>Inactivo</button>";
+                    $sub_array[] = "<button type='button' onClick='gal_act(".$row["gal_id"].");' class='btn btn-danger btn-sm'>Inactivo</button>";
                 }
                 $sub_array[] = '<button type="button" class="btn btn-outline-warning btn-icon" onClick="editar('.$row["gal_id"].')" id="'.$row["gal_id"].'"><div><i class="fa fa-edit"></i></div></button>';
                 $sub_array[] = '<button type="button" class="btn btn-outline-danger btn-icon" onClick="eliminar('.$row["gal_id"].')" id="'.$row["gal_id"].'"><div><i class="fa fa-close"></i></div></button>';
