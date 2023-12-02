@@ -21,7 +21,8 @@ function guardaryeditar(e){
                 title: 'Correcto!',
                 text: 'Se Registro Correctamente',
                 icon: 'success',
-                confirmButtonText: 'Aceptar'
+                showConfirmButton: false,
+                timer: 2000
             })
         }
     });

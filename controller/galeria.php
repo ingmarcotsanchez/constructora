@@ -6,7 +6,6 @@
     switch($_GET["opc"]){
         case "guardaryeditar":
             if(empty($_POST["gal_id"])){
-                //$imagen=$_FILES['gal_imagen']
                 $galeria->insert_galeria($_POST["gal_imagen"]);
             }else{
                 $galeria->update_galeria($_POST["gal_id"],$_POST["gal_imagen"]);

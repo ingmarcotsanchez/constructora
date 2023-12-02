@@ -5,7 +5,7 @@ function init(){
 }
 
 function guardaryeditar(e){
-    console.log("prueba");
+    //console.log("prueba");
     e.preventDefault();
     var formData = new FormData($("#cliente_form")[0]);
     $.ajax({
@@ -15,21 +15,32 @@ function guardaryeditar(e){
         contentType: false,
         processData: false,
         success: function(data){
-            console.log(data);
-            $('#cliente_data').DataTable().ajax.reload();
+            $("#cliente_form")[0];
+            if (data==1){
+                console.log(data);
+                $('#cliente_data').DataTable().ajax.reload();
 
-            Swal.fire({
-                title: 'Correcto!',
-                text: 'Se Registro Correctamente',
-                icon: 'success',
-                confirmButtonText: 'Aceptar'
-            })
+                Swal.fire({
+                    title: 'Correcto!',
+                    text: 'Se Registro Correctamente',
+                    icon: 'success',
+                    confirmButtonText: false,
+                    timer: 2000
+                })
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error!',
+                    text : 'Correo ya suscrito!',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+            }
         }
     });
 }
-
 $(document).ready(function(){
-    $('#cli_mensaje').summernote({
+   /* $('#cli_mensaje').summernote({
         height: 200,
         lang: "es-ES",
         callbacks: {
@@ -49,8 +60,8 @@ $(document).ready(function(){
     $('#cli_mensaje').summernote({
         height: 200,
         lang: "es-ES"
-    });
-    $('#cli_mensaje').summernote('disable');
+    });*/
+    //$('#cli_mensaje').summernote('disable');
     $('#cliente_data').DataTable({
         "aProcessing": true,
         "aServerSide": true,

@@ -37,8 +37,8 @@
         public function insert_clientes($cli_nombre, $cli_correo, $cli_telef, $cli_asunto, $cli_mensaje){
             $clientes=parent::Conexion();
             parent::set_names();
-            $sql="INSERT INTO clientes(cli_id, cli_nombre, cli_correo, cli_telef, cli_asunto, cli_mensaje, est)
-                    VALUES(NULL,?,?,?,?,?,1)";
+            $sql="INSERT INTO clientes(cli_id, cli_nombre, cli_correo, cli_telef, cli_asunto, cli_mensaje, fech_crea, est)
+                    VALUES(NULL,?,?,?,?,?,now(),1)";
             $sql=$clientes->prepare($sql);
             $sql->bindValue(1,$cli_nombre);
             $sql->bindValue(2,$cli_correo);
@@ -61,12 +61,12 @@
                         est=?
                     WHERE cli_id=?";
             $sql=$clientes->prepare($sql);
-            $sql->bindValue(1,$est);
-            $sql->bindValue(2,$cli_nombre);
-            $sql->bindValue(3,$cli_correo);
-            $sql->bindValue(4,$cli_telef);
-            $sql->bindValue(5,$cli_asunto);
-            $sql->bindValue(6,$cli_mensaje);
+            $sql->bindValue(1,$cli_nombre);
+            $sql->bindValue(2,$cli_correo);
+            $sql->bindValue(3,$cli_telef);
+            $sql->bindValue(4,$cli_asunto);
+            $sql->bindValue(5,$cli_mensaje);
+            $sql->bindValue(6,$est);
             $sql->bindValue(7,$cli_id);
             $sql->execute();
             return $resultado=$sql->fetchAll();

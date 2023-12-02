@@ -66,8 +66,8 @@
             <thead>
               <tr>
                 <th>Nombre</th>
-                <th>Celular</th>
                 <th>Email</th>
+                <th>Celular</th>
                 <th>Asunto</th>
                 <th>Mensaje</th>
                 <th>Estado</th>

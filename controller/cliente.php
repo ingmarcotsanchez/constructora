@@ -10,6 +10,7 @@
             }else{
                 $clientes->update_clientes($_POST["cli_id"],$_POST["cli_nombre"],$_POST["cli_correo"],$_POST["cli_telef"],$_POST["cli_asunto"],$_POST["cli_mensaje"],$_POST["est"]);
             }
+         
             break;
         case "mostrar":
             $datos=$clientes->get_clientesXid($_POST["cli_id"]);
@@ -37,6 +38,7 @@
                 $sub_array[] = $row["cli_nombre"];
                 $sub_array[] = $row["cli_correo"];
                 $sub_array[] = $row["cli_telef"];
+                $sub_array[] = $row["fech_crea"];
                 $data[] = $sub_array;
             }
             $results = array(
@@ -53,9 +55,8 @@
             foreach($datos as $row){
                 $sub_array = array();
                 $sub_array[] = $row["cli_nombre"];
-                $sub_array[] = $row["cli_telef"];
                 $sub_array[] = $row["cli_correo"];
-                
+                $sub_array[] = $row["cli_telef"];
                 $sub_array[] = $row["cli_asunto"];
                 $sub_array[] = $row["cli_mensaje"];
                 if($row["est"] == 1){

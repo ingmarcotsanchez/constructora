@@ -1,9 +1,14 @@
+<?php 
+  $titulo="Constructores e Ingenieros";
+  define("URL","/constructora/");
+  require_once("config/conexion.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Constructores e Ingenieros</title>
+  <title><?php echo $titulo; ?></title>
   <?php require_once("views/modulos/head-web.php");?>
 </head>
 <body>
@@ -236,7 +241,7 @@
             <div class="input-area">
                 <textarea id="cli_mensaje" name="cli_mensaje" cols="154" rows="5" placeholder="Comentarios"></textarea>
             </div>
-            <button type="submit" name="action" id="#" value="add" class="btn btn-form">Enviar</button>
+            <button type="submit" name="action" value="add" class="btn btn-form">Enviar</button>
           </form>
         </div>
       </div>
@@ -270,8 +275,8 @@
       <?php require_once("views/modulos/copy.php");?>
     </div>
   </footer>
-  <script src="public/js/main.js"></script>
-  <script src="public/js/index.js"></script>
+  <script src="/constructora/public/js/main.js"></script>
+  <script src="/constructora/public/js/index.js"></script>
   <script>
         ScrollReveal({ 
             reset: true,

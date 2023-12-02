@@ -39,7 +39,7 @@
                             <fieldset class="form-group">
                             <label class="form-label semibold" for="cli_mensaje">Descripción</label>
                             <div class="summernote-theme-1">
-                                <textarea id="cli_mensaje" name="cli_mensaje" class="summernote" name="name" disabled></textarea>
+                                <textarea id="cli_mensaje" cols="105" rows="10" name="cli_mensaje" disabled></textarea>
                             </div>
                             </fieldset>
                         </div>

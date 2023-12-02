@@ -27,18 +27,6 @@
                 echo json_encode($output);
             }
             break;
-        case "modificar":
-            $usuarios->update_usuarios(
-                $_POST["usu_id"],
-                $_POST["usu_foto"],
-                $_POST["usu_nombre"],
-                $_POST["usu_apep"],
-                $_POST["usu_apem"],
-                $_POST["usu_correo"],
-                $_POST["usu_pass"],
-                $_POST["usu_telf"]
-            );
-            break;
         case "modificar_perfil":
             $usuarios->update_perfil(
                 $_POST["usu_id"],

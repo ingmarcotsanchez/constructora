@@ -113,6 +113,7 @@
                       <th>Nombre del cliente</th>
                       <th>Correo Electrónico</th>
                       <th>Número de contacto</th>
+                      <th>Fecha de Registro</th>
                     </tr>
                   </thead>
                   <tbody>
