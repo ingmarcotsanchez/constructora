@@ -42,7 +42,7 @@
         public function delete_galeria($gal_id){
             $galeria=parent::Conexion();
             parent::set_names();
-            $sql="UPDATE galeria SET est=0 WHERE gal_id=?";
+            $sql="DELETE FROM galeria WHERE gal_id=?";
             $sql=$galeria->prepare($sql);
             $sql->bindValue(1,$gal_id);
             $sql->execute();

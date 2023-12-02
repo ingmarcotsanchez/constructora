@@ -7,7 +7,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="post" id="proyectos_form">
+            <form method="post" id="cliente_form">
                 <div class="modal-body">
                     <input type="hidden" name="cli_id" id="cli_id">
                     <div class="row">

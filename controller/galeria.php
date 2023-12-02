@@ -5,17 +5,11 @@
 
     switch($_GET["opc"]){
         case "guardaryeditar":
-            if(empty($_POST["galid"])){
+            if(empty($_POST["gal_id"])){
                 $galeria->insert_galeria($_POST["gal_imagen"]);
             }else{
                 $galeria->update_galeria($_POST["gal_id"],$_POST["gal_imagen"]);
             }
-            break;
-        case "modificar":
-            $galeria->update_galeria(
-                $_POST["gal_id"],
-                $_POST["gal_imagen"]
-            );
             break;
         case "mostrar":
             $galeria->get_galeriaXid($_POST["gal_id"]);
@@ -45,5 +39,11 @@
                 "aaData"=>$data
             );
             echo json_encode($results);
+            break;
+        case "activo":
+            $galeria->update_estadoActivo($_POST["gal_id"]);
+            break;
+        case "inactivo":
+            $galeria->update_estadoInactivo($_POST["gal_id"]);
             break;
     }
