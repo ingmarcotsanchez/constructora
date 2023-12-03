@@ -6,9 +6,9 @@
     switch($_GET["opc"]){
         case "guardaryeditar":
             if(empty($_POST["mpro_id"])){
-                $mntproyectos->insert_mntproyectos($_POST["mpro_video"],$_POST["pro_id"],$_POST["mpro_descripcion"],$_POST["mpro_direccion"],$_POST["mpro_privada"],$_POST["mpro_const"],$_POST["mpro_alcobas"],$_POST["mpro_bannos"],$_POST["mpro_imagen1"],$_POST["mpro_imagen2"],$_POST["mpro_imagen3"],$_POST["mpro_imagen4"],$_POST["mpro_imagen5"],$_POST["mpro_imagen6"],$_POST["mpro_imagen7"],$_POST["mpro_imagen8"],$_POST["mpro_imagen9"],$_POST["mpro_imagen10"]);
+                $mntproyectos->insert_mntproyectos($_POST["mpro_video"],$_POST["pro_id"],$_POST["mpro_descripcion"],$_POST["mpro_privada"],$_POST["mpro_const"],$_POST["mpro_alcobas"],$_POST["mpro_bannos"],$_POST["mpro_imagen1"],$_POST["mpro_imagen2"],$_POST["mpro_imagen3"],$_POST["mpro_imagen4"],$_POST["mpro_imagen5"],$_POST["mpro_imagen6"],$_POST["mpro_imagen7"],$_POST["mpro_imagen8"],$_POST["mpro_imagen9"],$_POST["mpro_imagen10"]);
             }else{
-                $mntproyectos->update_mntproyectos($_POST["mpro_id"],$_POST["mpro_video"],$_POST["pro_id"],$_POST["mpro_descripcion"],$_POST["mpro_direccion"],$_POST["mpro_privada"],$_POST["mpro_const"],$_POST["mpro_alcobas"],$_POST["mpro_bannos"],$_POST["mpro_imagen1"],$_POST["mpro_imagen2"],$_POST["mpro_imagen3"],$_POST["mpro_imagen4"],$_POST["mpro_imagen5"],$_POST["mpro_imagen6"],$_POST["mpro_imagen7"],$_POST["mpro_imagen8"],$_POST["mpro_imagen9"],$_POST["mpro_imagen10"]);
+                $mntproyectos->update_mntproyectos($_POST["mpro_id"],$_POST["mpro_video"],$_POST["pro_id"],$_POST["mpro_descripcion"],$_POST["mpro_privada"],$_POST["mpro_const"],$_POST["mpro_alcobas"],$_POST["mpro_bannos"],$_POST["mpro_imagen1"],$_POST["mpro_imagen2"],$_POST["mpro_imagen3"],$_POST["mpro_imagen4"],$_POST["mpro_imagen5"],$_POST["mpro_imagen6"],$_POST["mpro_imagen7"],$_POST["mpro_imagen8"],$_POST["mpro_imagen9"],$_POST["mpro_imagen10"]);
             }
             break;
         case "mostrar":
@@ -23,7 +23,6 @@
             foreach($datos as $row){
                 $sub_array = array();
                 $sub_array[] = $row["pro_id"];
-                $sub_array[] = $row["mpro_direccion"];
                 $sub_array[] = $row["mpro_privada"];
                 $sub_array[] = $row["mpro_const"];
                 $sub_array[] = $row["mpro_alcobas"];

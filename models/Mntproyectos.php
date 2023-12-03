@@ -17,41 +17,39 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
-        public function insert_mntproyectos($mpro_video,$pro_id,$mpro_descripcion,$mpro_direccion,$mpro_privada,$mpro_const,$mpro_alcobas,$mpro_bannos,$mpro_imagen1,$mpro_imagen2,$mpro_imagen3,$mpro_imagen4,$mpro_imagen5,$mpro_imagen6,$mpro_imagen7,$mpro_imagen8,$mpro_imagen9,$mpro_imagen10){
+        public function insert_mntproyectos($mpro_video,$pro_id,$mpro_descripcion,$mpro_privada,$mpro_const,$mpro_alcobas,$mpro_bannos,$mpro_imagen1,$mpro_imagen2,$mpro_imagen3,$mpro_imagen4,$mpro_imagen5,$mpro_imagen6,$mpro_imagen7,$mpro_imagen8,$mpro_imagen9,$mpro_imagen10){
             $mntproyectos=parent::Conexion();
             parent::set_names();
-            $sql="INSERT INTO mntproyectos(mpro_id,mpro_video,pro_id,mpro_descripcion,mpro_direccion,mpro_privada,mpro_const,mpro_alcobas,mpro_bannos,mpro_imagen1,mpro_imagen2,mpro_imagen3,mpro_imagen4,mpro_imagen5,mpro_imagen6,mpro_imagen7,mpro_imagen8,mpro_imagen9,mpro_imagen10,est)
-                    VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,1)";
+            $sql="INSERT INTO mntproyectos(mpro_id,mpro_video,pro_id,mpro_descripcion,mpro_privada,mpro_const,mpro_alcobas,mpro_bannos,mpro_imagen1,mpro_imagen2,mpro_imagen3,mpro_imagen4,mpro_imagen5,mpro_imagen6,mpro_imagen7,mpro_imagen8,mpro_imagen9,mpro_imagen10,est)
+                    VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,1)";
             $sql=$mntproyectos->prepare($sql);
             $sql->bindValue(1,$mpro_video);
             $sql->bindValue(2,$pro_id);
             $sql->bindValue(3,$mpro_descripcion);
-            $sql->bindValue(4,$mpro_direccion);
-            $sql->bindValue(5,$mpro_privada);
-            $sql->bindValue(6,$mpro_const);
-            $sql->bindValue(7,$mpro_alcobas);
-            $sql->bindValue(8,$mpro_bannos);
-            $sql->bindValue(9,$mpro_imagen1);
-            $sql->bindValue(10,$mpro_imagen2);
-            $sql->bindValue(11,$mpro_imagen3);
-            $sql->bindValue(12,$mpro_imagen4);
-            $sql->bindValue(13,$mpro_imagen5);
-            $sql->bindValue(14,$mpro_imagen6);
-            $sql->bindValue(15,$mpro_imagen7);
-            $sql->bindValue(16,$mpro_imagen8);
-            $sql->bindValue(17,$mpro_imagen9);
-            $sql->bindValue(18,$mpro_imagen10);
+            $sql->bindValue(4,$mpro_privada);
+            $sql->bindValue(5,$mpro_const);
+            $sql->bindValue(6,$mpro_alcobas);
+            $sql->bindValue(7,$mpro_bannos);
+            $sql->bindValue(8,$mpro_imagen1);
+            $sql->bindValue(9,$mpro_imagen2);
+            $sql->bindValue(10,$mpro_imagen3);
+            $sql->bindValue(11,$mpro_imagen4);
+            $sql->bindValue(12,$mpro_imagen5);
+            $sql->bindValue(13,$mpro_imagen6);
+            $sql->bindValue(14,$mpro_imagen7);
+            $sql->bindValue(15,$mpro_imagen8);
+            $sql->bindValue(16,$mpro_imagen9);
+            $sql->bindValue(17,$mpro_imagen10);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
-        public function update_mntproyectos($mpro_id,$mpro_video,$pro_id,$mpro_descripcion,$mpro_direccion,$mpro_privada,$mpro_const,$mpro_alcobas,$mpro_bannos,$mpro_imagen1,$mpro_imagen2,$mpro_imagen3,$mpro_imagen4,$mpro_imagen5,$mpro_imagen6,$mpro_imagen7,$mpro_imagen8,$mpro_imagen9,$mpro_imagen10){
+        public function update_mntproyectos($mpro_id,$mpro_video,$pro_id,$mpro_descripcion,$mpro_privada,$mpro_const,$mpro_alcobas,$mpro_bannos,$mpro_imagen1,$mpro_imagen2,$mpro_imagen3,$mpro_imagen4,$mpro_imagen5,$mpro_imagen6,$mpro_imagen7,$mpro_imagen8,$mpro_imagen9,$mpro_imagen10){
             $mntproyectos=parent::Conexion();
             parent::set_names();
             $sql="UPDATE mntproyectos
                     SET mpro_video=?,
                         pro_id=?,
                         mpro_descripcion=?,
-                        mpro_direccion=?,
                         mpro_privada=?,
                         mpro_const=?,
                         mpro_alcobas=?,
@@ -71,22 +69,21 @@
             $sql->bindValue(1,$mpro_video);
             $sql->bindValue(2,$pro_id);
             $sql->bindValue(3,$mpro_descripcion);
-            $sql->bindValue(4,$mpro_direccion);
-            $sql->bindValue(5,$mpro_privada);
-            $sql->bindValue(6,$mpro_const);
-            $sql->bindValue(7,$mpro_alcobas);
-            $sql->bindValue(8,$mpro_bannos);
-            $sql->bindValue(9,$mpro_imagen1);
-            $sql->bindValue(10,$mpro_imagen2);
-            $sql->bindValue(11,$mpro_imagen3);
-            $sql->bindValue(12,$mpro_imagen4);
-            $sql->bindValue(13,$mpro_imagen5);
-            $sql->bindValue(14,$mpro_imagen6);
-            $sql->bindValue(15,$mpro_imagen7);
-            $sql->bindValue(16,$mpro_imagen8);
-            $sql->bindValue(17,$mpro_imagen9);
-            $sql->bindValue(18,$mpro_imagen10);
-            $sql->bindValue(19,$mpro_id);
+            $sql->bindValue(4,$mpro_privada);
+            $sql->bindValue(5,$mpro_const);
+            $sql->bindValue(6,$mpro_alcobas);
+            $sql->bindValue(7,$mpro_bannos);
+            $sql->bindValue(8,$mpro_imagen1);
+            $sql->bindValue(9,$mpro_imagen2);
+            $sql->bindValue(10,$mpro_imagen3);
+            $sql->bindValue(11,$mpro_imagen4);
+            $sql->bindValue(12,$mpro_imagen5);
+            $sql->bindValue(13,$mpro_imagen6);
+            $sql->bindValue(14,$mpro_imagen7);
+            $sql->bindValue(15,$mpro_imagen8);
+            $sql->bindValue(16,$mpro_imagen9);
+            $sql->bindValue(17,$mpro_imagen10);
+            $sql->bindValue(18,$mpro_id);
             $sql->execute();
             return $resultado=$sql->fetchAll();}
         public function delete_mntproyectos($mpro_id){

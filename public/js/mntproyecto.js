@@ -28,7 +28,38 @@ function guardaryeditar(e){
     });
 }
 $(document).ready(function(){
-   
+    $('#pro_id').select2({
+        dropdownParent: $("#modalcrearMntProyecto")
+    });
+
+    select_proyecto();
+
+    $('#mpro_descripcion').summernote({
+        height: 400,
+        lang: "es-ES",
+        callbacks: {
+            onPaste: function (e) {
+                console.log("Text detect...");
+            }
+        },
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+        ]
+    });
+
+    $('#mpro_descripcion').summernote({
+        height: 400,
+        lang: "es-ES"
+    });  
+
+    $('#mpro_descripcion');
+
+
     $('#mntproyecto_data').DataTable({
         "aProcessing": true,
         "aServerSide": true,
@@ -88,7 +119,6 @@ function editar(mpro_id){
         $('#mpro_video').val(data.mpro_video);
         $('#pro_id').val(data.pro_id).trigger('change');;
         $('#mpro_descripcion').val(data.mpro_descripcion);
-        $('#mpro_direccion').val(data.mpro_direccion);
         $('#mpro_privada').val(data.mpro_privada);
         $('#mpro_const').val(data.mpro_const);
         $('#mpro_alcobas').val(data.mpro_alcobas);
@@ -143,5 +173,9 @@ function mpro_ina(mpro_id){
     });
 }
 
-
+function select_proyecto(){
+    $.post("/constructora/controller/proyecto.php?opc=combo",function (data){
+        $('#pro_id').html(data);
+    });
+}
 init();
