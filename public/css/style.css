@@ -95,7 +95,24 @@ h3{
 .titles::before {
     position: absolute;
     content: "";
-    left: calc(50% - 145px);;
+    left: calc(50% - 145px);
+    bottom: -8px;
+    height: 3px;
+    width: 300px;
+    background: var(--orange);
+}
+.titles-left {
+    position: relative;
+    text-align: left;
+    font-size: 3rem;
+    color: var(--black);
+    margin: 20px 0;
+}
+  
+.titles-left::before {
+    position: absolute;
+    content: "";
+    left: 0;
     bottom: -8px;
     height: 3px;
     width: 300px;
@@ -196,7 +213,7 @@ h3{
     padding: 50px;
 }
 .services,.projects,
-.gallery,.contact,.clients{
+.gallery,.contact,.clients,.project_detalle{
     padding: 100px 0;
 }
 .services,.gallery{
@@ -214,6 +231,10 @@ h3{
     box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.1);
     color: #161515;
 }
+.project_detalle2-content .box{
+    padding: 10px;
+    color: #161515;
+}
 .projects-container .box .box-img{
     width: 100%;
     height: 200px;
@@ -225,7 +246,8 @@ h3{
     object-fit: cover;
     object-position: center;
 }
-.projects-container .box .box-text{
+.projects-container .box .box-text,
+.project_detalle2-content .box .box-text{
     width: 100%;
     height: auto;
     display: flex;
@@ -235,6 +257,18 @@ h3{
     display: flex;
     flex-direction: row;
     padding: 10px;
+}
+.project_detalle2-content .box .box-text .box-text-head{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    text-align: left;
+    font-family: var(--exo);
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+.project_detalle2-content .box .box-text .box-text-head h3{
+    color: #161515;
 }
 .projects-container .box .box-text .box-text-head img{
     width: 60px;
@@ -250,7 +284,8 @@ h3{
     font-family: var(--exo);
     font-size: 1.3rem;
 }
-.projects-container .box .box-text .box-text-info{
+.projects-container .box .box-text .box-text-info,
+.project_detalle2-content .box .box-text .box-text-info{
     display: grid;
     align-items: center;
     grid-template-columns: repeat(auto-fit,minmax(50px,auto));
@@ -261,7 +296,8 @@ h3{
     flex-direction: column;
     align-items: center;
 }
-.projects-container .box .box-text .box-text-info div .text-name{
+.projects-container .box .box-text .box-text-info div .text-name,
+.project_detalle2-content .box .box-text .box-text-info div .text-name{
     font-family: var(--exo);
     font-size: 1.3rem;
 }
@@ -589,7 +625,7 @@ footer .footer-information{
     text-align: center;
 }
 .footer-information div a, .footer-information div p{
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #161515;
     font-family: var(--poppins);
 }
@@ -604,6 +640,28 @@ footer .footer-information{
 .copy .social a{
     font-size: 1.3rem;
 }
+.project_detalle,.project_detalle2{
+    width: 100%;
+    color: #161515;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+.project_detalle-txt p,
+.project_detalle2-txt p {
+    text-align: justify;
+}
+
+.project_detalle-img img,
+.project_detalle2-img img {
+    width: 100%;
+    border-radius: 5px;
+}
+  
 @media(max-width:990px){
     .menu{
         padding: 1px;

@@ -2,6 +2,10 @@
   $titulo="Constructores e Ingenieros";
   define("URL","/constructora/");
   require_once("config/conexion.php");
+
+  require_once("models/Proyectos.php");
+    $project = new Proyectos();
+    $proj = $project->get_proyectos();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -99,6 +103,7 @@
     <div class="projects-content container">
       <h2 class="titles">Proyectos</h2>
       <div class="projects-container container">
+      <?php for($i=0;$i<sizeof($proj);$i++): ?>
         <div class="box">
           <div class="box-img">
             <img src="public/img/project01.jpg" alt="">
@@ -107,34 +112,36 @@
             <div class="box-text-head">
               <img src="public/img/project01.jpg" alt="Logo proyecto 1">
               <div class="descripcion">
-                <p>Ciudad</p>
-                <p class="text-name">Nombre del proyecto</p>
+                <p><?php echo $proj[$i]["pro_ciudad"] ?></p>
+                <p class="text-name"><?php echo $proj[$i]["pro_nombre"] ?></p>
               </div>
             </div>
             <div class="box-text-info">
               <div>
                 <p class="text-name">Casas</p>
-                <p>250</p>
+                <p><?php echo $proj[$i]["pro_casas"] ?></p>
               </div>
               <div>
                 <p class="text-name">Piscinas</p>
-                <p>5</p>
+                <p><?php echo $proj[$i]["pro_piscinas"] ?></p>
               </div>
               <div>
                 <p class="text-name">Parques</p>
-                <p>3</p>
+                <p><?php echo $proj[$i]["pro_parques"] ?></p>
               </div>
               <div>
                 <p class="text-name">Tipo</p>
-                <p>Vis</p>
+                <p><?php echo $proj[$i]["pro_tipo"] ?></p>
               </div>
             </div>
             <div class="box-text-footer">
-              <h3>Vendido</h3>
-              <a href="#" class="btn btn-contact">Ver proyecto</a>
+              <h3>$<?php echo $proj[$i]["pro_precio"] ?></h3>
+              <a href="project.php" class="btn btn-contact">Ver proyecto</a>
             </div>
           </div>
         </div>
+      <?php endfor; ?>
+      <!--  
         <div class="box">
           <div class="box-img">
             <img src="public/img/project02.jpg" alt="">
@@ -171,6 +178,7 @@
             </div>
           </div>
         </div>
+      -->
       </div>
     </div>
   </section>
