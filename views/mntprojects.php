@@ -59,10 +59,10 @@
 
       <div class="card">
         <div class="card-header">
-          <button type="submit" class="btn btn-outline-secondary">Nuevo</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="nuevo()">Nuevo</button>
         </div>
         <div class="card-body">
-          <table id="example1" class="table table-bordered table-striped">
+          <table id="mntproyecto_data" class="table table-bordered table-striped">
             <thead>
               <tr>
                 <th>Proyecto</th>
@@ -86,7 +86,10 @@
   </div>
   <?php require_once("modulos/footer.php");?>
 </div>
+<?php require_once("mntprojectsModal.php"); ?>
 <?php require_once("modulos/js.php");?>
+<script type="text/javascript" src="../public/js/mntproyecto.js"></script>
+
 <!-- Page specific script -->
 
 </body>

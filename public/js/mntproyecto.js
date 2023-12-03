@@ -53,7 +53,7 @@ $(document).ready(function(){
     });
 
     $('#mpro_descripcion').summernote({
-        height: 400,
+        height: 200,
         lang: "es-ES"
     });  
 

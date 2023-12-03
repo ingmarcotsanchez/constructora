@@ -76,7 +76,7 @@ $(document).ready(function(){
 
 function nuevo(){
     $('#titulo_modal').html('Nuevo Proyecto');
-    //$('#proyecto_form')[0].reset();
+    $('#proyecto_form')[0].reset();
     $('#modalcrearProyectos').modal('show');
 }
 

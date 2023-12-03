@@ -40,28 +40,6 @@ function guardaryeditar(e){
     });
 }
 $(document).ready(function(){
-   /* $('#cli_mensaje').summernote({
-        height: 200,
-        lang: "es-ES",
-        callbacks: {
-            onPaste: function (e) {
-                console.log("Text detect...");
-            }
-        },
-        toolbar: [
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough', 'superscript', 'subscript']],
-            ['fontsize', ['fontsize']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']]
-        ]
-    });
-    $('#cli_mensaje').summernote({
-        height: 200,
-        lang: "es-ES"
-    });*/
-    //$('#cli_mensaje').summernote('disable');
     $('#cliente_data').DataTable({
         "aProcessing": true,
         "aServerSide": true,

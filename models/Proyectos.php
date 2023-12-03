@@ -20,7 +20,7 @@
         public function insert_proyectos($pro_logo,$pro_nombre,$pro_ciudad,$pro_casas,$pro_piscinas,$pro_parques,$pro_tipo,$pro_imagen,$pro_precio){
             $proyectos=parent::Conexion();
             parent::set_names();
-            $sql="INSERT INTO mntproyectos(pro_id,pro_logo,pro_nombre,pro_ciudad,pro_casas,pro_piscinas,pro_parques,pro_tipo,pro_imagen,pro_precio,est)
+            $sql="INSERT INTO proyectos(pro_id,pro_logo,pro_nombre,pro_ciudad,pro_casas,pro_piscinas,pro_parques,pro_tipo,pro_imagen,pro_precio,est)
                     VALUES(NULL,?,?,?,?,?,?,?,?,?,1)";
             $sql=$proyectos->prepare($sql);
             $sql->bindValue(1,$pro_logo);
@@ -38,7 +38,7 @@
         public function update_proyectos($pro_id,$pro_logo,$pro_nombre,$pro_ciudad,$pro_casas,$pro_piscinas,$pro_parques,$pro_tipo,$pro_imagen,$pro_precio){
             $proyectos=parent::Conexion();
             parent::set_names();
-            $sql="UPDATE mntproyectos
+            $sql="UPDATE proyectos
                     SET 
                     pro_logo=?,
                     pro_nombre=?,

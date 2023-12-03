@@ -37,51 +37,116 @@
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="pro_ciudad">Ciudad del proyecto</label>
-                                <input type="text" class="form-control" name="pro_ciudad" id="pro_ciudad" placeholder="Ingrese un Correo">
+                                <label for="mpro_privada">Área Privada</label>
+                                <input type="text" class="form-control" name="mpro_privada" id="mpro_privada" placeholder="Ingrese el área privada">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="pro_casas">Cantidad de casas</label>
-                                <input type="text" class="form-control" name="pro_casas" id="pro_casas" placeholder="Ingrese Teléfono del cliente">
+                                <label for="mpro_const">Área Construida</label>
+                                <input type="text" class="form-control" name="mpro_const" id="mpro_const" placeholder="Ingrese el área construida">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="pro_piscinas">Cantidad de piscinas</label>
-                                <input type="text" class="form-control" name="pro_piscinas" id="pro_piscinas" placeholder="Ingrese Teléfono del cliente">
+                                <label for="mpro_alcobas">Cantidad de Alcobas</label>
+                                <input type="text" class="form-control" name="mpro_alcobas" id="mpro_alcobas" placeholder="Ingrese cantidad de alcobas">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="pro_parques">Cantidad de parques</label>
-                                <input type="text" class="form-control" name="pro_parques" id="pro_parques" placeholder="Ingrese Teléfono del cliente">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="pro_tipo">Estado</label>
-                                <select class="form-control select2" name="pro_tipo" id="pro_tipo" data-placeholder="Seleccione">
-                                    <option label="Seleccione"></option>
-                                    <option value="V">Vis</option>
-                                    <option value="N">No Vis</option>
-                                </select>
+                                <label for="mpro_bannos">Cantidad de Baños</label>
+                                <input type="text" class="form-control" name="mpro_bannos" id="mpro_bannos" placeholder="Ingrese cantidad de baños">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="pro_imagen">Imagen</label>
+                                <label for="mpro_imagen1">Imagen</label>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="pro_imagen" id="pro_imagen">
+                                    <input type="file" class="custom-file-input" name="mpro_imagen1" id="mpro_imagen1">
                                     <label class="custom-file-label" for="customFile">Buscar una imagen</label>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="pro_precio">Precio del Proyecto</label>
-                                <input type="text" class="form-control" name="pro_precio" id="pro_precio" placeholder="Ingrese el Nombre del cliente">
+                                <label for="mpro_imagen2">Imagen</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="mpro_imagen2" id="mpro_imagen2">
+                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="mpro_imagen3">Imagen</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="mpro_imagen3" id="mpro_imagen3">
+                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="mpro_imagen4">Imagen</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="mpro_imagen4" id="mpro_imagen4">
+                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="mpro_imagen5">Imagen</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="mpro_imagen5" id="mpro_imagen5">
+                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="mpro_imagen6">Imagen</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="mpro_imagen6" id="mpro_imagen6">
+                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="mpro_imagen7">Imagen</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="mpro_imagen7" id="mpro_imagen7">
+                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="mpro_imagen8">Imagen</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="mpro_imagen8" id="mpro_imagen8">
+                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="mpro_imagen9">Imagen</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="mpro_imagen9" id="mpro_imagen9">
+                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="mpro_imagen10">Imagen</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="mpro_imagen10" id="mpro_imagen10">
+                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                </div>
                             </div>
                         </div>
                     </div> 
