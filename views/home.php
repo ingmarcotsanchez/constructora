@@ -4,6 +4,7 @@
   $fecha_actual = date("d-m-Y");
   define("URL","/constructora/views/");
   require_once("../config/conexion.php");
+  require_once("../models/Usuario.php");
   if(isset($_SESSION["usu_id"])){
 ?>
 <!DOCTYPE html>
@@ -86,7 +87,7 @@
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-thumbs-up"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">Proyectos</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-number" id="lbltotalProyectos"></span>
               </div>
             </div>
           </div>
@@ -95,7 +96,7 @@
               <span class="info-box-icon bg-orange elevation-1"><i class="fas fa-users text-white"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">Nuevos Clientes</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-number" id="lbltotalClientes"></span>
               </div>
             </div>
           </div>
@@ -131,6 +132,7 @@
 </div>
 <?php require_once("modulos/js.php");?>
 <script src="../public/js/home.js"></script>
+<script src="../public/js/boxes.js"></script>
 </body>
 </html>
 <?php

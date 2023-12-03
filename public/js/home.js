@@ -1,3 +1,6 @@
+function init(){
+    
+}
 $(document).ready(function(){
 
     $('#cliente_data').DataTable({

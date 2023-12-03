@@ -6,6 +6,10 @@
   require_once("models/Proyectos.php");
     $project = new Proyectos();
     $proj = $project->get_proyectos();
+
+  require_once("models/Galeria.php");
+    $gallery = new Galeria();
+    $gal = $gallery->get_galeria();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,6 +114,7 @@
           </div>
           <div class="box-text">
             <div class="box-text-head">
+              <!--<img src="public/img/<?php //echo $proj[$i]["pro_imagen"] ?>" alt="Logo proyecto 1">-->
               <img src="public/img/project01.jpg" alt="Logo proyecto 1">
               <div class="descripcion">
                 <p><?php echo $proj[$i]["pro_ciudad"] ?></p>
