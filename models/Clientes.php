@@ -1,5 +1,14 @@
 <?php
     class Clientes extends Conectar{
+        public function get_correo($cli_correo) {
+            $conectar = parent::conexion();
+            parent::set_names();
+            $sql="SELECT * FROM clientes WHERE cli_correo=?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $cli_correo);
+            $sql->execute();
+            return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
+        }
         public function get_clientes(){
             $clientes=parent::Conexion();
             parent::set_names();

@@ -2,15 +2,27 @@
     require_once("../config/conexion.php");
     require_once("../models/Clientes.php");
     $clientes = new Clientes();
-
+    require_once("../models/Email.php");
+    $email = new Email();
     switch($_GET["opc"]){
+        case "guardarCliente":
+            $datos = $clientes->get_correo($_POST["cli_correo"]);
+            if(is_array($datos)==true and count($datos)==0){
+                $clientes->insert_clientes($_POST["cli_nombre"],$_POST["cli_correo"],$_POST["cli_telef"],$_POST["cli_asunto"],$_POST["cli_mensaje"]);
+                echo 1;
+            }else{
+                echo 2;
+            }
+            break;
+        case "emailBienvenida":
+            $email->email_bienvenida($_POST["cli_correo"]);
+            break;
         case "guardaryeditar":
             if(empty($_POST["cli_id"])){
                 $clientes->insert_clientes($_POST["cli_nombre"],$_POST["cli_correo"],$_POST["cli_telef"],$_POST["cli_asunto"],$_POST["cli_mensaje"]);
             }else{
                 $clientes->update_clientes($_POST["cli_id"],$_POST["cli_nombre"],$_POST["cli_correo"],$_POST["cli_telef"],$_POST["cli_asunto"],$_POST["cli_mensaje"],$_POST["est"]);
             }
-         
             break;
         case "mostrar":
             $datos=$clientes->get_clientesXid($_POST["cli_id"]);

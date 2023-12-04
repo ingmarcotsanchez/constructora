@@ -64,7 +64,16 @@ h3{
     font-family: var(--roboto);
     cursor: pointer;
 }
-.btn-cite,.btn-contact{
+.btn-contact{
+    background: linear-gradient(
+        90deg,
+        rgba(245,99,72,1)0%,
+        rgba(254,144,32,1)100%
+    );
+    padding: 10px 20px;
+    border-radius: 10px; 
+}
+.btn-cite{
     background: linear-gradient(
         90deg,
         rgba(245,99,72,1)0%,
@@ -164,6 +173,17 @@ h3{
 .logo{
     width: 200px;
     padding: 10px;
+}
+.header-scrolled{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color:#f0f0f0 !important;
+    color: #161515;
+    -webkit-box-shadow: 0 4px 6px 0 rgba(12,0,46,.05);
+    box-shadow: 0 4px 6px 0 rgba(12,0,46,.05);
 }
 .menu{
     position: fixed;
@@ -284,12 +304,17 @@ h3{
     font-family: var(--exo);
     font-size: 1.3rem;
 }
+.project_detalle2-content .box .box-text .box-text-head h3{
+    margin: 20px 0 30px 0;
+    color: #F28737;
+}
 .projects-container .box .box-text .box-text-info,
 .project_detalle2-content .box .box-text .box-text-info{
     display: grid;
     align-items: center;
     grid-template-columns: repeat(auto-fit,minmax(50px,auto));
     gap: 1rem;
+    margin-top: 20px;
 }
 .projects-container .box .box-text .box-text-info div{
     display: flex;
@@ -301,10 +326,12 @@ h3{
     font-family: var(--exo);
     font-size: 1.3rem;
 }
+
 .projects-container .box .box-text .box-text-footer{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-top: 40px;
 }
 .projects-container .box .box-text .box-text-footer h3{
     color: var(--black);

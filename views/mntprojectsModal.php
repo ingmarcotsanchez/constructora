@@ -64,7 +64,7 @@
                                 <label for="mpro_imagen1">Imagen</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="mpro_imagen1" id="mpro_imagen1">
-                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                    <label class="custom-file-label" for="mpro_imagen1">Buscar una imagen</label>
                                 </div>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                                 <label for="mpro_imagen2">Imagen</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="mpro_imagen2" id="mpro_imagen2">
-                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                    <label class="custom-file-label" for="mpro_imagen2">Buscar una imagen</label>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                                 <label for="mpro_imagen3">Imagen</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="mpro_imagen3" id="mpro_imagen3">
-                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                    <label class="custom-file-label" for="mpro_imagen3">Buscar una imagen</label>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                                 <label for="mpro_imagen4">Imagen</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="mpro_imagen4" id="mpro_imagen4">
-                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                    <label class="custom-file-label" for="mpro_imagen4">Buscar una imagen</label>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                                 <label for="mpro_imagen5">Imagen</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="mpro_imagen5" id="mpro_imagen5">
-                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                    <label class="custom-file-label" for="mpro_imagen5">Buscar una imagen</label>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                                 <label for="mpro_imagen6">Imagen</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="mpro_imagen6" id="mpro_imagen6">
-                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                    <label class="custom-file-label" for="mpro_imagen6">Buscar una imagen</label>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +118,7 @@
                                 <label for="mpro_imagen7">Imagen</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="mpro_imagen7" id="mpro_imagen7">
-                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                    <label class="custom-file-label" for="mpro_imagen7">Buscar una imagen</label>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                                 <label for="mpro_imagen8">Imagen</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="mpro_imagen8" id="mpro_imagen8">
-                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                    <label class="custom-file-label" for="mpro_imagen8">Buscar una imagen</label>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                                 <label for="mpro_imagen9">Imagen</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="mpro_imagen9" id="mpro_imagen9">
-                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                    <label class="custom-file-label" for="mpro_imagen9">Buscar una imagen</label>
                                 </div>
                             </div>
                         </div>
@@ -145,7 +145,7 @@
                                 <label for="mpro_imagen10">Imagen</label>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="mpro_imagen10" id="mpro_imagen10">
-                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                    <label class="custom-file-label" for="mpro_imagen10">Buscar una imagen</label>
                                 </div>
                             </div>
                         </div>

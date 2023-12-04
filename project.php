@@ -60,22 +60,22 @@
                         <p class="text-name">Km 5 algo algo algo</p>
                     </div>
                     <div class="box-text-info">
-                    <div>
-                        <p class="text-name">Área Privada</p>
-                        <p>250 mts</p>
-                    </div>
-                    <div>
-                    <p class="text-name">Área Construida</p>
-                        <p>150 mts</p>
-                    </div>
-                    <div>
-                        <p class="text-name">Alcobas</p>
-                        <p>3</p>
-                    </div>
-                    <div>
-                        <p class="text-name">Baños</p>
-                        <p>2</p>
-                    </div>
+                        <div>
+                            <p class="text-name">Área Privada</p>
+                            <p>250 mts</p>
+                        </div>
+                        <div>
+                        <p class="text-name">Área Construida</p>
+                            <p>150 mts</p>
+                        </div>
+                        <div>
+                            <p class="text-name">Alcobas</p>
+                            <p>3</p>
+                        </div>
+                        <div>
+                            <p class="text-name">Baños</p>
+                            <p>2</p>
+                        </div>
                     </div>
                 </div>
             </div>

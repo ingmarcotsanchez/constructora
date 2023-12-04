@@ -6,13 +6,31 @@
     switch($_GET["opc"]){
         case "guardaryeditar":
             if(empty($_POST["pro_id"])){
-                $proyectos->insert_proyectos($_POST["pro_logo"],$_POST["pro_nombre"],$_POST["pro_ciudad"],$_POST["pro_casas"],$_POST["pro_piscinas"],$_POST["pro_parques"],$_POST["pro_tipo"],$_POST["pro_imagen"],$_POST["pro_precio"]);
+                /*$nombreLogo=$_FILES["pro_logo"]['name'];
+                $tamanoLogo=$_FILES["pro_logo"]['size'];
+                $imagenLogo=fopen($_FILES["pro_logo"]['tmp_name'],'r');
+                $imagenLogo=fread($imagenLogo,$tamanoLogo);*/
+                $proyectos->insert_proyectos($_FILES["pro_logo"]['name'],$_POST["pro_nombre"],$_POST["pro_ciudad"],$_POST["pro_casas"],$_POST["pro_piscinas"],$_POST["pro_parques"],$_POST["pro_tipo"],$_FILES["pro_imagen"]['name'],$_POST["pro_precio"]);
             }else{
+                
                 $proyectos->update_proyectos($_POST["pro_id"],$_POST["pro_logo"],$_POST["pro_nombre"],$_POST["pro_ciudad"],$_POST["pro_casas"],$_POST["pro_piscinas"],$_POST["pro_parques"],$_POST["pro_tipo"],$_POST["pro_imagen"],$_POST["pro_precio"]);
             }
             break;
         case "mostrar":
-            $proyectos->get_proyectosXid($_POST["pro_id"]);
+            $datos=$proyectos->get_proyectosXid($_POST["pro_id"]);
+            if(is_array($datos)==true and count($datos)<>0){
+                foreach($datos as $row){
+                    $output["pro_id"] = $row["pro_id"];
+                    $output["pro_nombre"] = $row["pro_nombre"];
+                    $output["pro_ciudad"] = $row["pro_ciudad"];
+                    $output["pro_casas"] = $row["pro_casas"];
+                    $output["pro_piscinas"] = $row["pro_piscinas"];
+                    $output["pro_parques"] = $row["pro_parques"];
+                    $output["pro_tipo"] = $row["pro_tipo"];
+                    $output["pro_precio"] = $row["pro_precio"];
+                }
+                echo json_encode($output);
+            }
             break;
         case "eliminar":
             $proyectos->delete_proyectos($_POST["pro_id"]);

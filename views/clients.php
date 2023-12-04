@@ -87,7 +87,7 @@
 </div>
 <?php require_once("clientsModal.php"); ?>
 <?php require_once("modulos/js.php");?>
-<script type="text/javascript" src="../public/js/index.js"></script>
+<script type="text/javascript" src="../public/js/clientes.js"></script>
 </body>
 </html>
 <?php

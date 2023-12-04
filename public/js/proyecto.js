@@ -81,9 +81,10 @@ function nuevo(){
 }
 
 function editar(pro_id){
+    console.log(pro_id);
     $.post("./../controller/proyecto.php?opc=mostrar",{pro_id:pro_id},function (data){
-        data = JSON.parse(data);
         console.log(data);
+        data = JSON.parse(data);
         $('#pro_id').val(data.pro_id);
         $('#pro_logo').val(data.pro_logo);
         $('#pro_nombre').val(data.pro_nombre);
@@ -132,6 +133,11 @@ function pro_ina(pro_id){
     $.post("/constructora/controller/proyecto.php?opc=inactivo",{pro_id:pro_id},function (data){
         $('#proyecto_data').DataTable().ajax.reload();
     });
+}
+
+function detalle_proyecto(pro_id){
+    console.log(pro_id);
+    window.open('project.php?pro_id='+pro_id+'');
 }
 
 

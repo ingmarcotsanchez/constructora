@@ -21,7 +21,7 @@
 </head>
 <body>
   <header class="header" id="header">
-    <div class="menu container">
+    <div class="menu container" id="navbar">
       <a href="index.php" class="logo"><img src="public/img/logo.png" alt="logo de la empresa"></a>
       <input type="checkbox" id="menu">
       <label for="menu">
@@ -108,14 +108,15 @@
       <h2 class="titles">Proyectos</h2>
       <div class="projects-container container">
       <?php for($i=0;$i<sizeof($proj);$i++): ?>
+        <input type="hidden" value="<?php echo $proj[$i]["pro_id"] ?>">
         <div class="box">
           <div class="box-img">
             <img src="public/img/project01.jpg" alt="">
           </div>
           <div class="box-text">
             <div class="box-text-head">
-              <!--<img src="public/img/<?php //echo $proj[$i]["pro_imagen"] ?>" alt="Logo proyecto 1">-->
-              <img src="public/img/project01.jpg" alt="Logo proyecto 1">
+              <img src="public/img/<?php echo $proj[$i]["pro_imagen"] ?>" alt="Logo proyecto 1">
+              <!--<img src="public/img/project01.jpg" alt="Logo proyecto 1">-->
               <div class="descripcion">
                 <p><?php echo $proj[$i]["pro_ciudad"] ?></p>
                 <p class="text-name"><?php echo $proj[$i]["pro_nombre"] ?></p>
@@ -136,54 +137,25 @@
               </div>
               <div>
                 <p class="text-name">Tipo</p>
-                <p><?php echo $proj[$i]["pro_tipo"] ?></p>
+                <p>
+                  <?php 
+                    if($proj[$i]["pro_tipo"] == 'V'){
+                      echo "Vis";
+                    }else{
+                      echo "No Vis";
+                    }
+                  ?>
+                </p>
               </div>
             </div>
             <div class="box-text-footer">
               <h3>$<?php echo $proj[$i]["pro_precio"] ?></h3>
-              <a href="project.php" class="btn btn-contact">Ver proyecto</a>
+              <!--<button type="button" onClick="detalle_proyecto($row['pro_id']);" id="$row['mat_id']" class="btn btn-contact">Ver</button>-->
+              <a href="project.php?<?php echo $proj[$i]["pro_id"] ?>" class="btn btn-contact">Ver</a>
             </div>
           </div>
         </div>
       <?php endfor; ?>
-      <!--  
-        <div class="box">
-          <div class="box-img">
-            <img src="public/img/project02.jpg" alt="">
-          </div>
-          <div class="box-text">
-            <div class="box-text-head">
-              <img src="public/img/project02.jpg" alt="Logo proyecto 1">
-              <div class="descripcion">
-                <p>Ciudad</p>
-                <p class="text-name">Nombre del proyecto</p>
-              </div>
-            </div>
-            <div class="box-text-info">
-              <div>
-                <p class="text-name">Casas</p>
-                <p>250</p>
-              </div>
-              <div>
-                <p class="text-name">Piscinas</p>
-                <p>5</p>
-              </div>
-              <div>
-                <p class="text-name">Parques</p>
-                <p>3</p>
-              </div>
-              <div>
-                <p class="text-name">Tipo</p>
-                <p>Vis</p>
-              </div>
-            </div>
-            <div class="box-text-footer">
-              <h3>$250.000.000</h3>
-              <a href="#" class="btn btn-contact">Ver proyecto</a>
-            </div>
-          </div>
-        </div>
-      -->
       </div>
     </div>
   </section>
@@ -229,32 +201,32 @@
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.865844257744!2d-74.83930602559319!3d4.246358195727535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f2920526d1bb9%3A0x1fab6d695a4322e3!2sCondominio%20villa%20esperanza%202!5e0!3m2!1ses-419!2sco!4v1701403738827!5m2!1ses-419!2sco" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="contact-form">
-          <form class="main-box" method="post" id="cliente_form">
+          <form class="main-box" method="post" id="contact_form">
             <input type="hidden" id="cli_id" name="cli_id">
             <div class="input-box">
                 <span class="icon"><i class='bx bxs-id-card'></i></span>
                 <input type="text" id="cli_nombre" name="cli_nombre" required>
-                <label for="names">Nombres y Apellidos</label>
+                <label for="cli_nombre">Nombres y Apellidos</label>
             </div>
             <div class="input-box">
                 <span class="icon"><i class='bx bxs-phone-call'></i></span>
                 <input type="text" id="cli_telef" name="cli_telef" required>
-                <label for="Celular">Celular</label>
+                <label for="cli_telef">Celular</label>
             </div>
             <div class="input-box">
                 <span class="icon"><i class='bx bxs-envelope'></i></span>
                 <input type="email" id="cli_correo" name="cli_correo" required>
-                <label for="email">Email</label>
+                <label for="cli_correo">Email</label>
             </div>
             <div class="input-box">
                 <span class="icon"><i class='bx bxs-archive-out'></i></span>
                 <input type="text" id="cli_asunto" name="cli_asunto" required>
-                <label for="asunto">Asunto</label>
+                <label for="cli_asunto">Asunto</label>
             </div>
             <div class="input-area">
                 <textarea id="cli_mensaje" name="cli_mensaje" cols="154" rows="5" placeholder="Comentarios"></textarea>
             </div>
-            <button type="submit" name="action" value="add" class="btn btn-form">Enviar</button>
+            <button type="submit" name="action" id="#" value="add" class="btn btn-form">Enviar</button>
           </form>
         </div>
       </div>
@@ -288,8 +260,41 @@
       <?php require_once("views/modulos/copy.php");?>
     </div>
   </footer>
-  <script src="/constructora/public/js/main.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+  <script type="text/javascript">
+    $(window).scroll(function(){console.log($(window).scrollTop());
+    if($(window).scrollTop() > 500 && $(window).scrollTop() < 5042){
+      $('#navbar').addClass('header-scrolled');
+    }else {
+      $('#navbar').removeClass('header-scrolled');
+    }
+});
+  /* $(window).scroll(function() {
+        if ($(this).scrollTop() > 20) {
+            $('#navbar').addClass('header-scrolled');
+        } else {
+            $('#navbar').removeClass('header-scrolled');
+        }
+    });	*/
+
+   /* var header = document.getElementById('navbar');
+var scroller;
+window.addEventListener('scroll',()=>{
+     scroller = window.scrollY;
+});
+if(scroller > 100){
+    header.style.backgroundColor = '#f0f0f0';
+}else{
+    header.style.backgroundColor = 'transparent';
+}*/
+  </script>
   <script src="/constructora/public/js/index.js"></script>
+  <script>
+    function detalle_proyecto(pro_id){
+        console.log(pro_id);
+        window.open('project.php?pro_id='+pro_id+'');
+    }
+  </script>
   <script>
         ScrollReveal({ 
             reset: true,
