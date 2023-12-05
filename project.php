@@ -144,6 +144,12 @@
     </div>
   </footer>
   <script src="public/js/client.js"></script>
+  <script type="text/javascript">
+    window.addEventListener("scroll",function(){
+      var header = document.querySelector(".menu");
+      header.classList.toggle("header-scrolled2",window.scrollY > 0);
+    })
+  </script>
   <script>
         ScrollReveal({ 
             reset: true,

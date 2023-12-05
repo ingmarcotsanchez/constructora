@@ -6,13 +6,56 @@
     switch($_GET["opc"]){
         case "guardaryeditar":
             if(empty($_POST["gal_id"])){
-                $galeria->insert_galeria($_POST["gal_imagen"]);
+                $imgFile = $_FILES['gal_imagen']['name'];
+                $tmp_dir = $_FILES['gal_imagen']['tmp_name'];
+                $imgSize = $_FILES['gal_imagen']['size'];
+                $upload_dir = '/constructora/public/img/galeria/';
+                $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION));
+                $valid_extensions = array('jpeg', 'jpg', 'png');
+                $userpic = rand(1000,1000000).".".$imgExt;
+                if(in_array($imgExt, $valid_extensions)){   
+                    // Check file size '5MB'
+                    if($imgSize < 5000000)    {
+                     move_uploaded_file($tmp_dir,$upload_dir.$userpic);
+                    }
+                    else{
+                     $errMSG = "Sorry, your file is too large.";
+                    }
+                    if(!isset($errMSG)){
+                        $galeria->insert_galeria($userpic);
+                    }
+                }
+               // $revisar = getimagesize($_FILES["gal_imagen"]["tmp_name"]);
+               // var_dump($revisar);
+               // if($revisar !== false){
+               //     $image = $_FILES['gal_imagen']['tmp_name'];
+               //     var_dump($image);
+               //     $imgContenido = addslashes(file_get_contents($image));
+               //     var_dump($imgContenido);
+                    //$galeria->insert_galeria($imgContenido);
+               // }
             }else{
+               // $revisar = getimagesize($_FILES["gal_imagen"]["tmp_name"]);
+               // if($revisar !== false){
+               //     $image = $_FILES['gal_imagen']['tmp_name'];
+               //    $imgContenido = addslashes(file_get_contents($image));
+               //     $galeria->update_galeria($_POST["gal_id"],$imgContenido);
+                //}
                 $galeria->update_galeria($_POST["gal_id"],$_POST["gal_imagen"]);
             }
             break;
         case "mostrar":
-            $galeria->get_galeriaXid($_POST["gal_id"]);
+            $datos=$galeria->get_galeriaXid($_POST["gal_id"]);
+            if(is_array($datos)==true and count($datos)<>0){
+                foreach($datos as $row){
+                    $output["gal_id"] = $row["gal_id"];
+                   // $imgDatos = $row->fetch_assoc();
+                   // header("Content-type: image/jpg"); 
+                    $output["gal_imagen"] = $row["gal_imagen"];
+                }
+                echo json_encode($output);
+            }
+            break;
             break;
         case "eliminar":
             $galeria->delete_galeria($_POST["gal_id"]);
@@ -22,6 +65,8 @@
             $data = Array();
             foreach($datos as $row){
                 $sub_array = array();
+                $imgDatos = $row["gal_imagen"];
+                header("Content-type: image/jpg"); 
                 $sub_array[] = $row["gal_imagen"];
                 if($row["est"] == '1'){
                     $sub_array[] = "<button type='button' onClick='gal_ina(".$row["gal_id"].");' class='btn btn-success btn-sm'>Activo</button>";

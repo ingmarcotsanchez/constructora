@@ -141,7 +141,7 @@
         public function total_clientes(){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="SELECT count(*) as total FROM clientes WHERE est=1";
+            $sql="SELECT count(*) as total FROM clientes";
             $sql=$conectar->prepare($sql);
             $sql->execute();
             return $resultado=$sql->fetchAll();

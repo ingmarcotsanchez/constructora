@@ -262,31 +262,11 @@
   </footer>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
   <script type="text/javascript">
-    $(window).scroll(function(){console.log($(window).scrollTop());
-    if($(window).scrollTop() > 500 && $(window).scrollTop() < 5042){
-      $('#navbar').addClass('header-scrolled');
-    }else {
-      $('#navbar').removeClass('header-scrolled');
-    }
-});
-  /* $(window).scroll(function() {
-        if ($(this).scrollTop() > 20) {
-            $('#navbar').addClass('header-scrolled');
-        } else {
-            $('#navbar').removeClass('header-scrolled');
-        }
-    });	*/
-
-   /* var header = document.getElementById('navbar');
-var scroller;
-window.addEventListener('scroll',()=>{
-     scroller = window.scrollY;
-});
-if(scroller > 100){
-    header.style.backgroundColor = '#f0f0f0';
-}else{
-    header.style.backgroundColor = 'transparent';
-}*/
+    window.addEventListener("scroll",function(){
+      var header = document.querySelector(".menu");
+      header.classList.toggle("header-scrolled",window.scrollY > 0);
+    })
+   
   </script>
   <script src="/constructora/public/js/index.js"></script>
   <script>
