@@ -10,6 +10,8 @@
                 $tmp_dir = $_FILES['gal_imagen']['tmp_name'];
                 $imgFile = $_FILES['gal_imagen']['name'];
                 $imgSize = $_FILES['gal_imagen']['size'];
+                //$upload_dir = __DIR__.'/../public/img/galeria/';
+                //var_dump($upload_dir); exit;
                 $upload_dir = '/galeria/';
                 $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION));
                 $valid_extensions = array('jpeg', 'jpg', 'png');

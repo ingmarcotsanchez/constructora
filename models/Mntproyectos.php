@@ -139,7 +139,7 @@
         public function delete_mntproyectos($mpro_id){
             $mntproyectos=parent::Conexion();
             parent::set_names();
-            $sql="UPDATE mntproyectos SET est=0 WHERE mpro_id=?";
+            $sql="DELETE FROM mntproyectos WHERE mpro_id=?";
             $sql=$mntproyectos->prepare($sql);
             $sql->bindValue(1,$mpro_id);
             $sql->execute();

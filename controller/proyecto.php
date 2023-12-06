@@ -14,7 +14,7 @@
                 $imgFile2 = $_FILES['pro_imagen']['name'];
                 $imgSize2 = $_FILES['pro_imagen']['size'];
 
-                $upload_dir = '/proyectos/';
+                $upload_dir = __DIR__.'/../public/img/proyectos/';
                 $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION));
                 $imgExt2 = strtolower(pathinfo($imgFile2,PATHINFO_EXTENSION));
 

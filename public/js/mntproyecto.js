@@ -112,7 +112,7 @@ function nuevo(){
 }
 
 function editar(mpro_id){
-    $.post("./../controller/mntproyecto.php?opc=mostrar",{mpro_id:mpro_id},function (data){
+    $.post("./../controller/mntproyectos.php?opc=mostrar",{mpro_id:mpro_id},function (data){
         data = JSON.parse(data);
         console.log(data);
         $('#mpro_id').val(data.mpro_id);
@@ -148,7 +148,7 @@ function eliminar(mpro_id){
         cancelButtonText: 'Cancelar',
     }).then((result)=>{
         if(result.value){
-            $.post("/constructora/controller/mntproyecto.php?opc=eliminar",{mpro_id:mpro_id},function (data){
+            $.post("../controller/mntproyectos.php?opc=eliminar",{mpro_id:mpro_id},function (data){
                 $('#mntproyecto_data').DataTable().ajax.reload();
                 Swal.fire({
                     title: 'Correcto!',
@@ -162,13 +162,13 @@ function eliminar(mpro_id){
 }
 
 function mpro_act(mpro_id){
-    $.post("/constructora/controller/mntproyecto.php?opc=activo",{mpro_id:mpro_id},function (data){
+    $.post("/constructora/controller/mntproyectos.php?opc=activo",{mpro_id:mpro_id},function (data){
         $('#mntproyecto_data').DataTable().ajax.reload();
     });
 }
 
 function mpro_ina(mpro_id){
-    $.post("/constructora/controller/mntproyecto.php?opc=inactivo",{mpro_id:mpro_id},function (data){
+    $.post("/constructora/controller/mntproyectos.php?opc=inactivo",{mpro_id:mpro_id},function (data){
         $('#mntproyecto_data').DataTable().ajax.reload();
     });
 }
