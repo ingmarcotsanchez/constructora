@@ -6,17 +6,19 @@
     switch($_GET["opc"]){
         case "guardaryeditar":
             if(empty($_POST["gal_id"])){
-                $imgFile = $_FILES['gal_imagen']['name'];
+                //$tmp_dir="imagenes";
                 $tmp_dir = $_FILES['gal_imagen']['tmp_name'];
+                $imgFile = $_FILES['gal_imagen']['name'];
                 $imgSize = $_FILES['gal_imagen']['size'];
-                $upload_dir = '/constructora/public/img/galeria/';
+                $upload_dir = '/galeria/';
                 $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION));
                 $valid_extensions = array('jpeg', 'jpg', 'png');
                 $userpic = rand(1000,1000000).".".$imgExt;
                 if(in_array($imgExt, $valid_extensions)){   
                     // Check file size '5MB'
                     if($imgSize < 5000000)    {
-                     move_uploaded_file($tmp_dir,$upload_dir.$userpic);
+                        var_dump(move_uploaded_file($tmp_dir,$upload_dir.$userpic));
+                        move_uploaded_file($tmp_dir,$upload_dir.$userpic);
                     }
                     else{
                      $errMSG = "Sorry, your file is too large.";
@@ -25,22 +27,9 @@
                         $galeria->insert_galeria($userpic);
                     }
                 }
-               // $revisar = getimagesize($_FILES["gal_imagen"]["tmp_name"]);
-               // var_dump($revisar);
-               // if($revisar !== false){
-               //     $image = $_FILES['gal_imagen']['tmp_name'];
-               //     var_dump($image);
-               //     $imgContenido = addslashes(file_get_contents($image));
-               //     var_dump($imgContenido);
-                    //$galeria->insert_galeria($imgContenido);
-               // }
+               
             }else{
-               // $revisar = getimagesize($_FILES["gal_imagen"]["tmp_name"]);
-               // if($revisar !== false){
-               //     $image = $_FILES['gal_imagen']['tmp_name'];
-               //    $imgContenido = addslashes(file_get_contents($image));
-               //     $galeria->update_galeria($_POST["gal_id"],$imgContenido);
-                //}
+              
                 $galeria->update_galeria($_POST["gal_id"],$_POST["gal_imagen"]);
             }
             break;
@@ -73,7 +62,7 @@
                 }else{
                     $sub_array[] = "<button type='button' onClick='gal_act(".$row["gal_id"].");' class='btn btn-danger btn-sm'>Inactivo</button>";
                 }
-                $sub_array[] = '<button type="button" class="btn btn-outline-warning btn-icon" onClick="editar('.$row["gal_id"].')" id="'.$row["gal_id"].'"><div><i class="fa fa-edit"></i></div></button>';
+                //$sub_array[] = '<button type="button" class="btn btn-outline-warning btn-icon" onClick="editar('.$row["gal_id"].')" id="'.$row["gal_id"].'"><div><i class="fa fa-edit"></i></div></button>';
                 $sub_array[] = '<button type="button" class="btn btn-outline-danger btn-icon" onClick="eliminar('.$row["gal_id"].')" id="'.$row["gal_id"].'"><div><i class="fa fa-trash"></i></div></button>';
                 $data[] = $sub_array;
             }

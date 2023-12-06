@@ -17,10 +17,10 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
-        public function insert_proyectos($pro_logo,$pro_nombre,$pro_ciudad,$pro_casas,$pro_piscinas,$pro_parques,$pro_tipo,$pro_imagen,$pro_precio){
+        public function insert_proyectos($pro_logo,$pro_nombre,$pro_ciudad,$pro_casas,$pro_piscinas,$pro_parques,$pro_direccion,$pro_tipo,$pro_imagen,$pro_precio){
             $proyectos=parent::Conexion();
             parent::set_names();
-            $sql="INSERT INTO proyectos(pro_id,pro_logo,pro_nombre,pro_ciudad,pro_casas,pro_piscinas,pro_parques,pro_tipo,pro_imagen,pro_precio,est)
+            $sql="INSERT INTO proyectos(pro_id,pro_logo,pro_nombre,pro_ciudad,pro_casas,pro_piscinas,pro_parques,pro_direccion,pro_tipo,pro_imagen,pro_precio,est)
                     VALUES(NULL,?,?,?,?,?,?,?,?,?,1)";
             $sql=$proyectos->prepare($sql);
             $sql->bindValue(1,$pro_logo);
@@ -29,13 +29,14 @@
             $sql->bindValue(4,$pro_casas);
             $sql->bindValue(5,$pro_piscinas);
             $sql->bindValue(6,$pro_parques);
-            $sql->bindValue(7,$pro_tipo);
-            $sql->bindValue(8,$pro_imagen);
-            $sql->bindValue(9,$pro_precio);
+            $sql->bindValue(7,$pro_direccion);
+            $sql->bindValue(8,$pro_tipo);
+            $sql->bindValue(9,$pro_imagen);
+            $sql->bindValue(10,$pro_precio);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
-        public function update_proyectos($pro_id,$pro_logo,$pro_nombre,$pro_ciudad,$pro_casas,$pro_piscinas,$pro_parques,$pro_tipo,$pro_imagen,$pro_precio){
+        public function update_proyectos($pro_id,$pro_logo,$pro_nombre,$pro_ciudad,$pro_casas,$pro_piscinas,$pro_parques,$pro_direccion,$pro_tipo,$pro_imagen,$pro_precio){
             $proyectos=parent::Conexion();
             parent::set_names();
             $sql="UPDATE proyectos
@@ -46,6 +47,7 @@
                     pro_casas=?,
                     pro_piscinas=?,
                     pro_parques=?,
+                    pro_direccion=?,
                     pro_tipo=?,
                     pro_imagen=?,
                     pro_precio=?
@@ -57,10 +59,11 @@
             $sql->bindValue(4,$pro_casas);
             $sql->bindValue(5,$pro_piscinas);
             $sql->bindValue(6,$pro_parques);
-            $sql->bindValue(7,$pro_tipo);
-            $sql->bindValue(8,$pro_imagen);
-            $sql->bindValue(9,$pro_precio);
-            $sql->bindValue(10,$pro_id);
+            $sql->bindValue(7,$pro_direccion);
+            $sql->bindValue(8,$pro_tipo);
+            $sql->bindValue(9,$pro_imagen);
+            $sql->bindValue(10,$pro_precio);
+            $sql->bindValue(11,$pro_id);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }

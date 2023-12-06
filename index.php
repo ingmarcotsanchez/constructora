@@ -9,7 +9,7 @@
 
   require_once("models/Galeria.php");
     $gallery = new Galeria();
-    $gal = $gallery->get_galeria();
+    $gal = $gallery->get_galeria_index();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,12 +111,11 @@
         <input type="hidden" value="<?php echo $proj[$i]["pro_id"] ?>">
         <div class="box">
           <div class="box-img">
-            <img src="public/img/project01.jpg" alt="">
+            <img src="img/<?php echo $proj[$i]["pro_imagen"] ?>" alt="Logo proyecto 1">
           </div>
           <div class="box-text">
             <div class="box-text-head">
-              <img src="public/img/<?php echo $proj[$i]["pro_imagen"] ?>" alt="Logo proyecto 1">
-              <!--<img src="public/img/project01.jpg" alt="Logo proyecto 1">-->
+              <img src="img/<?php echo $proj[$i]["pro_logo"] ?>" alt="Logo proyecto 1">
               <div class="descripcion">
                 <p><?php echo $proj[$i]["pro_ciudad"] ?></p>
                 <p class="text-name"><?php echo $proj[$i]["pro_nombre"] ?></p>
@@ -150,8 +149,7 @@
             </div>
             <div class="box-text-footer">
               <h3>$<?php echo $proj[$i]["pro_precio"] ?></h3>
-              <!--<button type="button" onClick="detalle_proyecto($row['pro_id']);" id="$row['mat_id']" class="btn btn-contact">Ver</button>-->
-              <a href="project.php?<?php echo $proj[$i]["pro_id"] ?>" class="btn btn-contact">Ver</a>
+              <button type="button" onclick="detalle_proyecto(<?php echo $proj[$i]['pro_id'] ?>)" class="btn-contact">Ver</button>
             </div>
           </div>
         </div>
@@ -163,33 +161,11 @@
     <div class="gallery-content container">
       <h2 class="titles">Galería</h2>
       <div class="gallery-container container">
+        <?php for($i=0;$i<sizeof($gal);$i++): ?>
         <div class="box">
-          <img src="public/img//project01.jpg" alt="">
+          <img src="img/<?php echo $gal[$i]["gal_imagen"] ?>" alt="imagen de galeria">
         </div>
-        <div class="box">
-          <img src="public/img//project02.jpg" alt="">
-        </div>
-        <div class="box">
-          <img src="public/img//project03.jpg" alt="">
-        </div>
-        <div class="box">
-          <img src="public/img//project01.jpg" alt="">
-        </div>
-        <div class="box">
-          <img src="public/img//project02.jpg" alt="">
-        </div>
-        <div class="box">
-          <img src="public/img//project03.jpg" alt="">
-        </div>
-        <div class="box">
-          <img src="public/img//project01.jpg" alt="">
-        </div>
-        <div class="box">
-          <img src="public/img//project02.jpg" alt="">
-        </div>
-        <div class="box">
-          <img src="public/img//project03.jpg" alt="">
-        </div>
+        <?php endfor; ?>
       </div>
     </div>
   </section>
@@ -287,5 +263,7 @@
          ScrollReveal().reveal('.titles', { delay: 700, origin:'left' });
          ScrollReveal().reveal('.experience-content', { delay: 700, origin:'right' });
     </script>
+    <!-- sweetalert -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

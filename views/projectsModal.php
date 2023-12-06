@@ -15,39 +15,45 @@
                             <div class="form-group">
                                 <label for="pro_logo">Logo</label>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="pro_logo" id="pro_logo">
-                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                    <input type="file" class="custom-file-input" name="pro_logo" id="pro_logo" accept="image/*">
+                                    <label class="custom-file-label" for="pro_logo">Buscar un logo</label>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="pro_nombre">Nombre del Proyecto</label>
-                                <input type="text" class="form-control" name="pro_nombre" id="pro_nombre" placeholder="Ingrese el Nombre del cliente">
+                                <input type="text" class="form-control" name="pro_nombre" id="pro_nombre" placeholder="Ingrese el Nombre del proyecto">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
                                 <label for="pro_ciudad">Ciudad del proyecto</label>
-                                <input type="text" class="form-control" name="pro_ciudad" id="pro_ciudad" placeholder="Ingrese un Correo">
+                                <input type="text" class="form-control" name="pro_ciudad" id="pro_ciudad" placeholder="Ingrese la ciudad del proyecto">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
                                 <label for="pro_casas">Cantidad de casas</label>
-                                <input type="text" class="form-control" name="pro_casas" id="pro_casas" placeholder="Ingrese Teléfono del cliente">
+                                <input type="text" class="form-control" name="pro_casas" id="pro_casas" placeholder="Ingrese la cantidad de casas">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
                                 <label for="pro_piscinas">Cantidad de piscinas</label>
-                                <input type="text" class="form-control" name="pro_piscinas" id="pro_piscinas" placeholder="Ingrese Teléfono del cliente">
+                                <input type="text" class="form-control" name="pro_piscinas" id="pro_piscinas" placeholder="Ingrese la cantidad de piscinas">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
                                 <label for="pro_parques">Cantidad de parques</label>
-                                <input type="text" class="form-control" name="pro_parques" id="pro_parques" placeholder="Ingrese Teléfono del cliente">
+                                <input type="text" class="form-control" name="pro_parques" id="pro_parques" placeholder="Ingrese la cantidad de parques">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="pro_direccion">Dirección del proyecto</label>
+                                <input type="text" class="form-control" name="pro_direccion" id="pro_direccion" placeholder="Ingrese la dirección del proyecto">
                             </div>
                         </div>
                         <div class="col-12">
@@ -64,15 +70,15 @@
                             <div class="form-group">
                                 <label for="pro_imagen">Imagen</label>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="pro_imagen" id="pro_imagen">
-                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                    <input type="file" class="custom-file-input" name="pro_imagen" id="pro_imagen" accept="image/*">
+                                    <label class="custom-file-label" for="pro_imagen">Buscar una portada</label>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="pro_precio">Precio del Proyecto</label>
-                                <input type="text" class="form-control" name="pro_precio" id="pro_precio" placeholder="Ingrese el Nombre del cliente">
+                                <input type="text" class="form-control" name="pro_precio" id="pro_precio" placeholder="Ingrese el precio del proyecto">
                             </div>
                         </div>
                     </div> 

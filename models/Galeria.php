@@ -8,6 +8,14 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
+        public function get_galeria_index(){
+            $galeria=parent::Conexion();
+            parent::set_names();
+            $sql="SELECT * FROM galeria WHERE est=1";
+            $sql=$galeria->prepare($sql);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
         public function get_galeriaXid($gal_id){
             $galeria=parent::Conexion();
             parent::set_names();

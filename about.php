@@ -75,30 +75,27 @@
             <div class="wrapper">
                 <i id="left" class='bx bx-chevron-left'></i>
                 <div class="carousel">
-                    <img src="public/images/clients/Cafaba.png" alt="" draggable="false">
-                    <img src="public/images/clients/Cafamaz.png" alt="" draggable="false">
-                    <img src="public/images/clients/Cafasur.png" alt="" draggable="false">
-                    <img src="public/images/clients/Cajamag.png" alt="" draggable="false">
-                    <img src="public/images/clients/Cajasai.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comcaja.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfaca.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfacasanare.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfacesar.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfachoco.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfasucre.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfamiliar_narino.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfacor.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfacundi.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfaguajira.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfamiliar_cartagena.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfatolima.png" alt="">
-                    <img src="public/images/clients/Comfenalco_Cartagena.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfiar.png" alt="" draggable="false">
-                    <img src="public/images/clients/Hotel_California.png" alt="" draggable="false">
-                    <img src="public/images/clients/Hotel_Emaze.png" alt="" draggable="false">
-                    <img src="public/images/clients/Hotel_Lolita.png" alt="" draggable="false">
-                    <img src="public/images/clients/Hotel_Oasis.png" alt="" draggable="false">
-                    <img src="public/images/clients/Unisystem.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
                 </div>
                 <i id="right" class='bx bx-chevron-right'></i>
             </div>

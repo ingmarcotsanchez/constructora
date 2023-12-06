@@ -15,8 +15,8 @@
                             <div class="form-group">
                                 <label for="cli_nombre">Imagen</label>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="gal_imagen" id="gal_imagen">
-                                    <label class="custom-file-label" for="customFile">Buscar una imagen</label>
+                                    <input type="file" class="custom-file-input" name="gal_imagen" id="gal_imagen" accept="image/*">
+                                    <label class="custom-file-label" for="gal_imagen">Buscar una imagen</label>
                                 </div>
                             </div>
                         </div>

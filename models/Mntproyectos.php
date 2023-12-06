@@ -17,6 +17,56 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
+        public function get_mntproyectosDetalle(){
+            $mntproyectos=parent::Conexion();
+            parent::set_names();
+            $sql="SELECT
+            mntproyectos.mpro_id,
+            mntproyectos.mpro_video,
+            proyectos.pro_id,
+            proyectos.pro_nombre,
+            proyectos.pro_ciudad,
+            proyectos.pro_imagen,
+            proyectos.pro_direccion,
+            proyectos.pro_precio,
+            mntproyectos.mpro_descripcion,
+            mntproyectos.mpro_privada,
+            mntproyectos.mpro_const,
+            mntproyectos.mpro_alcobas,
+            mntproyectos.mpro_bannos,
+            mntproyectos.est
+            FROM mntproyectos
+            INNER JOIN proyectos on mntproyectos.pro_id = proyectos.pro_id";
+            $sql=$mntproyectos->prepare($sql);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+        public function get_mntproyectosDetallexid($pro_id){
+            $mntproyectos=parent::Conexion();
+            parent::set_names();
+            $sql="SELECT
+            mntproyectos.mpro_id,
+            mntproyectos.mpro_video,
+            proyectos.pro_id,
+            proyectos.pro_nombre,
+            proyectos.pro_ciudad,
+            proyectos.pro_imagen,
+            proyectos.pro_direccion,
+            proyectos.pro_precio,
+            mntproyectos.mpro_descripcion,
+            mntproyectos.mpro_privada,
+            mntproyectos.mpro_const,
+            mntproyectos.mpro_alcobas,
+            mntproyectos.mpro_bannos,
+            mntproyectos.est
+            FROM mntproyectos
+            INNER JOIN proyectos on mntproyectos.pro_id = proyectos.pro_id
+            WHERE mntproyectos.pro_id = ?";
+            $sql=$mntproyectos->prepare($sql);
+            $sql->bindValue(1,$pro_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
         public function insert_mntproyectos($mpro_video,$pro_id,$mpro_descripcion,$mpro_privada,$mpro_const,$mpro_alcobas,$mpro_bannos,$mpro_imagen1,$mpro_imagen2,$mpro_imagen3,$mpro_imagen4,$mpro_imagen5,$mpro_imagen6,$mpro_imagen7,$mpro_imagen8,$mpro_imagen9,$mpro_imagen10){
             $mntproyectos=parent::Conexion();
             parent::set_names();

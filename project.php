@@ -3,9 +3,11 @@
   define("URL","/constructora/");
   require_once("config/conexion.php");
 
-  require_once("models/Proyectos.php");
-    $project = new Proyectos();
-    $proj = $project->get_proyectos();
+  require_once("models/MntProyectos.php");
+    $mproject = new Mntproyectos();
+    //$mprox=$_GET['pro_id'];
+    $mproj = $mproject->get_mntproyectosDetallexid($_GET['pro_id']);
+    //print_r($mproj);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,15 +37,18 @@
             </nav>
         </div>
     </header>
+    <?php for($i=0;$i<sizeof($mproj);$i++): ?>
+
+    <input type="hidden" name="pro_id" id="pro_id" value="<?php echo $_GET['pro_id'] ?>">
     <section class="project_detalle container" id="project_detalle">
         <div class="project_detalle-content">
             <div class="project_detalle-txt">
-                <h2 class="titles-left">Nombre del proyecto</h2>
-                <p class="text-parrafo">Sistemas y Soluciones Integradas SAS es una <span>empresa digital que desarrolla software a la medida</span>, fundada en 1998 en Girardot (Colombia). Nacio para responder a las necesidades de transformación digital de una Caja de Compensación Familiar y actualmente trabaja con más del 50% del sector, consolidando un amplio portafolio de productos y servicios, evolucionando con nuevas tecnologías y ejecutando continuamente procesos de Investigación, Desarrollo e Innovación.</p>
+                <h2 class="titles-left"><?php echo $mproj[$i]["pro_nombre"] ?></h2>
+                <p class="text-parrafo"><?php echo $mproj[$i]["mpro_descripcion"] ?></p>
             </div>
         </div>
         <div class="project_detalle-img">
-            <img src="public/img/project01.jpg" alt="Foto de la empresa">
+            <iframe width="560" height="315" src="<?php echo $mproj[$i]["mpro_video"] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </section>
     <section class="project_detalle2 container">
@@ -55,61 +60,59 @@
                 <div class="box-text">
                     <div class="box-text-head">
                         <p>Desde</p>
-                        <h3>$300.000.000</h3>
-                        <p class="text-name">Ciudad</p>
-                        <p class="text-name">Km 5 algo algo algo</p>
+                        <h3>$<?php echo $mproj[$i]["pro_precio"] ?></h3>
+                        <p class="text-name"><?php echo $mproj[$i]["pro_ciudad"] ?></p>
+                        <p class="text-name"><?php echo $mproj[$i]["pro_direccion"] ?></p>
                     </div>
                     <div class="box-text-info">
                         <div>
                             <p class="text-name">Área Privada</p>
-                            <p>250 mts</p>
+                            <p><?php echo $mproj[$i]["mpro_privada"] ?></p>
                         </div>
                         <div>
                         <p class="text-name">Área Construida</p>
-                            <p>150 mts</p>
+                            <p><?php echo $mproj[$i]["mpro_const"] ?></p>
                         </div>
                         <div>
                             <p class="text-name">Alcobas</p>
-                            <p>3</p>
+                            <p><?php echo $mproj[$i]["mpro_alcobas"] ?></p>
                         </div>
                         <div>
                             <p class="text-name">Baños</p>
-                            <p>2</p>
+                            <p><?php echo $mproj[$i]["mpro_bannos"] ?></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <?php endfor; ?>
     <section class="clients">
         <div class="clients-content container">
             <div class="wrapper">
                 <i id="left" class='bx bx-chevron-left'></i>
                 <div class="carousel">
-                    <img src="public/images/clients/Cafaba.png" alt="" draggable="false">
-                    <img src="public/images/clients/Cafamaz.png" alt="" draggable="false">
-                    <img src="public/images/clients/Cafasur.png" alt="" draggable="false">
-                    <img src="public/images/clients/Cajamag.png" alt="" draggable="false">
-                    <img src="public/images/clients/Cajasai.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comcaja.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfaca.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfacasanare.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfacesar.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfachoco.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfasucre.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfamiliar_narino.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfacor.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfacundi.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfaguajira.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfamiliar_cartagena.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfatolima.png" alt="">
-                    <img src="public/images/clients/Comfenalco_Cartagena.png" alt="" draggable="false">
-                    <img src="public/images/clients/Comfiar.png" alt="" draggable="false">
-                    <img src="public/images/clients/Hotel_California.png" alt="" draggable="false">
-                    <img src="public/images/clients/Hotel_Emaze.png" alt="" draggable="false">
-                    <img src="public/images/clients/Hotel_Lolita.png" alt="" draggable="false">
-                    <img src="public/images/clients/Hotel_Oasis.png" alt="" draggable="false">
-                    <img src="public/images/clients/Unisystem.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                    <img src="public/images/works/work1.png" alt="" draggable="false">
                 </div>
                 <i id="right" class='bx bx-chevron-right'></i>
             </div>

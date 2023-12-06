@@ -1,5 +1,6 @@
 function init(){
     $("#contact_form").on("submit",function(e){
+        //console.log("hola");
         guardar(e);	
     });
 }
@@ -23,23 +24,25 @@ function guardar(e){
                 $.post("/constructora/controller/cliente.php?opc=emailBienvenida",{cli_correo : $("#cli_correo").val()},function(data){
                     console.log(data);
                 });
-
+                window.location.reload()
                 Swal.fire({
                     icon: 'success',
                     title: 'Constructores e Ingenieros',
                     text : 'Gracias por suscribirte!',
                     showConfirmButton: false,
                     timer: 2000
+                    
                 })
 
                 $("#cli_correo").val('');
             }else{
+                window.location.reload()
                 Swal.fire({
                     icon: 'error',
                     title: 'Constructores e Ingenieros',
                     text : 'Correo ya suscrito!',
                     showConfirmButton: false,
-                    timer: 2000
+                    timer: 5000
                 })
             }
         }

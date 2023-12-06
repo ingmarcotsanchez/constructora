@@ -29,7 +29,7 @@ function guardaryeditar(e){
 }
 $(document).ready(function(){
     $('#pro_id').select2({
-        dropdownParent: $("#modalcrearMntProyecto")
+        dropdownParent: $("#modalcrearMntProyectos")
     });
 
     select_proyecto();

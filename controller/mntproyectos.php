@@ -18,11 +18,11 @@
             $mntproyectos->delete_mntproyectos($_POST["mpro_id"]);
             break;
         case "listar":
-            $datos=$mntproyectos->get_mntproyectos();
+            $datos=$mntproyectos->get_mntproyectosDetalle();
             $data = Array();
             foreach($datos as $row){
                 $sub_array = array();
-                $sub_array[] = $row["pro_id"];
+                $sub_array[] = $row["pro_nombre"];
                 $sub_array[] = $row["mpro_privada"];
                 $sub_array[] = $row["mpro_const"];
                 $sub_array[] = $row["mpro_alcobas"];

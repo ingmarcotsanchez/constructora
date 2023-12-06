@@ -92,6 +92,7 @@ function editar(pro_id){
         $('#pro_casas').val(data.pro_casas);
         $('#pro_piscinas').val(data.pro_piscinas);
         $('#pro_parques').val(data.pro_parques);
+        $('#pro_direccion').val(data.pro_direccion);
         $('#pro_tipo').val(data.pro_tipo);
         $('#pro_imagen').val(data.pro_imagen);
         $('#pro_precio').val(data.pro_precio);
