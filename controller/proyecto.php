@@ -10,31 +10,31 @@
                 $imgFile = $_FILES['pro_logo']['name'];
                 $imgSize = $_FILES['pro_logo']['size'];
 
-                //$tmp_dir2 = $_FILES['pro_imagen']['tmp_name'];
-                ///$imgFile2 = $_FILES['pro_imagen']['name'];
-                ///$imgSize2 = $_FILES['pro_imagen']['size'];
+                $tmp_dir2 = $_FILES['pro_imagen']['tmp_name'];
+                $imgFile2 = $_FILES['pro_imagen']['name'];
+                $imgSize2 = $_FILES['pro_imagen']['size'];
 
                 $upload_dir = '/proyectos/';
                 $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION));
-                //$imgExt2 = strtolower(pathinfo($imgFile2,PATHINFO_EXTENSION));
+                $imgExt2 = strtolower(pathinfo($imgFile2,PATHINFO_EXTENSION));
 
                 $valid_extensions = array('jpeg', 'jpg', 'png');
                 $logo = rand(1000,1000000).".".$imgExt;
-                //$portada = rand(1000,1000000).".".$imgExt2;
+                $portada = rand(1000,1000000).".".$imgExt2;
 
-                if(in_array($imgExt, $valid_extensions)){//} and in_array($imgExt2, $valid_extensions)){ 
+                if(in_array($imgExt, $valid_extensions) && in_array($imgExt2, $valid_extensions)){ 
                       
                     // Check file size '5MB'
-                    if($imgSize < 5000000){//} and $imgSize2 < 5000000)    {
-                        //var_dump(move_uploaded_file($tmp_dir,$upload_dir.$logo));
+                    if($imgSize < 5000000 && $imgSize2 < 5000000)    {
+                        var_dump(move_uploaded_file($tmp_dir,$upload_dir.$logo));
                         move_uploaded_file($tmp_dir,$upload_dir.$logo);
-                       // move_uploaded_file($tmp_dir2,$upload_dir.$portada);
+                        move_uploaded_file($tmp_dir2,$upload_dir.$portada);
                     }
                     else{
                      $errMSG = "Sorry, your file is too large.";
                     }
                     if(!isset($errMSG)){
-                        $proyectos->insert_proyectos($logo,$_POST["pro_nombre"],$_POST["pro_ciudad"],$_POST["pro_casas"],$_POST["pro_piscinas"],$_POST["pro_parques"],$_POST["pro_direccion"],$_POST["pro_tipo"],$_POST["pro_imagen"],$_POST["pro_precio"]);
+                        $proyectos->insert_proyectos($logo,$_POST["pro_nombre"],$_POST["pro_ciudad"],$_POST["pro_casas"],$_POST["pro_piscinas"],$_POST["pro_parques"],$_POST["pro_direccion"],$_POST["pro_tipo"],$portada,$_POST["pro_precio"]);
                         //$galeria->insert_galeria($userpic);
                     }
                 }

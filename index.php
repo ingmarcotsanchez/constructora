@@ -111,11 +111,11 @@
         <input type="hidden" value="<?php echo $proj[$i]["pro_id"] ?>">
         <div class="box">
           <div class="box-img">
-            <img src="img/<?php echo $proj[$i]["pro_imagen"] ?>" alt="Logo proyecto 1">
+            <img src="public/img/proyectos/<?php echo $proj[$i]["pro_imagen"] ?>" alt="Logo proyecto 1">
           </div>
           <div class="box-text">
             <div class="box-text-head">
-              <img src="img/<?php echo $proj[$i]["pro_logo"] ?>" alt="Logo proyecto 1">
+              <img src="public/img/proyectos/<?php echo $proj[$i]["pro_logo"] ?>" alt="Logo proyecto 1">
               <div class="descripcion">
                 <p><?php echo $proj[$i]["pro_ciudad"] ?></p>
                 <p class="text-name"><?php echo $proj[$i]["pro_nombre"] ?></p>

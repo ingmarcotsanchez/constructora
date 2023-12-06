@@ -21,7 +21,7 @@
             $proyectos=parent::Conexion();
             parent::set_names();
             $sql="INSERT INTO proyectos(pro_id,pro_logo,pro_nombre,pro_ciudad,pro_casas,pro_piscinas,pro_parques,pro_direccion,pro_tipo,pro_imagen,pro_precio,est)
-                    VALUES(NULL,?,?,?,?,?,?,?,?,?,1)";
+                    VALUES(NULL,?,?,?,?,?,?,?,?,?,?,1)";
             $sql=$proyectos->prepare($sql);
             $sql->bindValue(1,$pro_logo);
             $sql->bindValue(2,$pro_nombre);

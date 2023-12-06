@@ -5,9 +5,8 @@
 
   require_once("models/MntProyectos.php");
     $mproject = new Mntproyectos();
-    //$mprox=$_GET['pro_id'];
     $mproj = $mproject->get_mntproyectosDetallexid($_GET['pro_id']);
-    //print_r($mproj);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
