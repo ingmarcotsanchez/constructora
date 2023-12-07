@@ -10,4 +10,8 @@ $(document).ready(function(){
         data = JSON.parse(data);
         $('#lbltotalClientes').html(data.total);
     });
+    $.post("/constructora/controller/usuario.php?opc=total_ClientesX", { usu_id : usu_id }, function (data) {
+        data = JSON.parse(data);
+        $('#lbltotalClientesX').html(data.total);
+    });
 });

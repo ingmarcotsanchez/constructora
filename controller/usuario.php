@@ -70,6 +70,16 @@
             );
             echo json_encode($results);
             break;
+        case "total_ClientesX":
+            $datos=$usuarios->total_clientesX();
+            if(is_array($datos)==true and count($datos)>0){
+                foreach($datos as $row)
+                {
+                    $output["total"] = $row["total"];
+                }
+                echo json_encode($output);
+            }
+            break;
         case "total_Clientes":
             $datos=$usuarios->total_clientes();
             if(is_array($datos)==true and count($datos)>0){
