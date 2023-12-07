@@ -842,9 +842,116 @@ footer .footer-information{
     } 
 }
 @media (max-width: 600px){
+   .column{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+   }
+    .about{
+        max-height: auto;
+        width: 100%;
+        background-color: aqua;
+    }
+    .about-img,
+    .about-content{
+        background-color:var(--orange);
+    }
+    .about-content h2, p.text-parrafo{
+        text-align: center;
+
+    }
+    .about-content p.text-parrafo{
+        font-size: 1rem;
+        text-align: center;
+    }
+    .experience{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+        padding: 6em 0;
+        width: 100%;
+    }
+    .experience-cards{
+        flex-direction: column;
+        gap: 2em;
+        justify-content: center;
+        align-items: center;
+    }
+    .experience-content{
+        text-align: center;
+    }
+    .e-card{
+        border: 2px solid orange;
+    }
+    .e-card:nth-of-type(odd){
+        margin-left: 0;
+    }
+    .e-card h3{
+        color: var(--orange);
+    }
+  
+    .subscribe-content{
+        flex-direction: column;
+        gap: 1em;
+    }
+    .subscribe-content strong{
+        display: block;
+    }
     .services-container{
         grid-template-columns: repeat(1,1fr);
     }
+    .wrapper i {
+        height: 45px;
+        width: 45px;
+        background-color: var(--orange);
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        line-height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.5em;
+        color: var(--blue);
+        transform: translateY(-50%);
+    }
+      
+    .wrapper i:first-child {
+        left: 3px;
+        display: none;
+    }
+      
+    .wrapper i:last-child {
+        right: 3px;
+    }
+      
+    .wrapper .carousel {
+        font-size: 0px;
+        cursor: pointer;
+        overflow: hidden;
+        white-space: nowrap;
+        scroll-behavior: smooth;
+    }
+      
+    .carousel.dragging {
+        cursor: grab;
+        scroll-behavior: auto;
+    }
+      
+    .carousel.dragging img {
+        pointer-events: none;
+    }
+      
+    .carousel img {
+        height: 200px;
+        margin-left: 14px;
+        width: 50.6666666667%;
+    }
+      
+    .carousel img:first-child {
+        margin-left: 0px;
+    }
+
+
     .footer-information .footer-links{
         flex-direction: column;
         justify-content: center;

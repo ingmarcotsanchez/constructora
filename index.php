@@ -44,7 +44,7 @@
         <h1>Constructores e Ingenieros</h1>
         <h2>G & G SAS</h2>
         <p class="text-parrafo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error numquam porro nobis eaque tenetur architecto corrupti incidunt ad repellat laborum? Ad suscipit sed vel perspiciatis esse nam, repellat eius id?</p>
-        <a href="#" class="btn btn-cite">Agendar una cita</a>
+        <a href="https://wa.me/3167405456" target="_blank" class="btn btn-cite"><i class='bx bxl-whatsapp'></i> Agendar una cita</a>
       </div>
     </div>
   </header>

@@ -58,6 +58,16 @@
             mntproyectos.mpro_const,
             mntproyectos.mpro_alcobas,
             mntproyectos.mpro_bannos,
+            mntproyectos.mpro_imagen1,
+            mntproyectos.mpro_imagen2,
+            mntproyectos.mpro_imagen3,
+            mntproyectos.mpro_imagen4,
+            mntproyectos.mpro_imagen5,
+            mntproyectos.mpro_imagen6,
+            mntproyectos.mpro_imagen7,
+            mntproyectos.mpro_imagen8,
+            mntproyectos.mpro_imagen9,
+            mntproyectos.mpro_imagen10,
             mntproyectos.est
             FROM mntproyectos
             INNER JOIN proyectos on mntproyectos.pro_id = proyectos.pro_id

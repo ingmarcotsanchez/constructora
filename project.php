@@ -91,32 +91,24 @@
             <div class="wrapper">
                 <i id="left" class='bx bx-chevron-left'></i>
                 <div class="carousel">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
-                    <img src="public/images/works/work1.png" alt="" draggable="false">
+                <?php for($i=0;$i<sizeof($mproj);$i++): ?>
+                    <img src="public/img/proyectos/<?php echo $mproj[$i]["mpro_imagen1"] ?>" alt="" draggable="false">
+                    <img src="public/img/proyectos/<?php echo $mproj[$i]["mpro_imagen2"] ?>" alt="" draggable="false">
+                    <img src="public/img/proyectos/<?php echo $mproj[$i]["mpro_imagen3"] ?>" alt="" draggable="false">
+                    <img src="public/img/proyectos/<?php echo $mproj[$i]["mpro_imagen4"] ?>" alt="" draggable="false">
+                    <img src="public/img/proyectos/<?php echo $mproj[$i]["mpro_imagen5"] ?>" alt="" draggable="false">
+                    <img src="public/img/proyectos/<?php echo $mproj[$i]["mpro_imagen6"] ?>" alt="" draggable="false">
+                    <img src="public/img/proyectos/<?php echo $mproj[$i]["mpro_imagen7"] ?>" alt="" draggable="false">
+                    <img src="public/img/proyectos/<?php echo $mproj[$i]["mpro_imagen8"] ?>" alt="" draggable="false">
+                    <img src="public/img/proyectos/<?php echo $mproj[$i]["mpro_imagen9"] ?>" alt="" draggable="false">
+                    <img src="public/img/proyectos/<?php echo $mproj[$i]["mpro_imagen10"] ?>" alt="" draggable="false">
+                <?php endfor; ?>
                 </div>
                 <i id="right" class='bx bx-chevron-right'></i>
             </div>
         </div>
     </section>
+    
     <footer class="footer">
     <div class="footer-information container">
       <div class="footer-horario">

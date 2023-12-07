@@ -7,7 +7,7 @@
     <?php require_once("views/modulos/head-web.php");?>
 </head>
 <body>
-    <header class="header-about">
+    <header class="header-about" id="header">
         <div class="menu container">
             <a href="index.php" class="logo"><img src="public/img/logo.png" alt="logo de la empresa"></a>
             <input type="checkbox" id="menu">
@@ -64,7 +64,7 @@
         <div class="subscribe-content container">
             <h3>Realice una consulta con un asesor.</h3>
             <p>Llamanos al siguiente número <strong><a href="tel:+573214614550">314 333 2345</a></strong></p>
-            <a href="#" class="btn btn-subscribe">Agende una cita!</a>
+            <a href="https://wa.me/3167405456" target="_blank" class="btn btn-subscribe">Agende una cita!</a>
         </div>
     </section>
     <section class="clients">
