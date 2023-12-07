@@ -14,28 +14,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Constructores e Ingenieros</title>
-    <?php require_once("views/modulos/head-web.php");?>
+    <?php require_once("views/modulos/head-index.php");?>
 </head>
 <body>
-    <header class="header-about">
-        <div class="menu container">
-            <a href="index.php" class="logo"><img src="public/img/logo.png" alt="logo de la empresa"></a>
-            <input type="checkbox" id="menu">
-            <label for="menu">
-                <img src="public/img/menu.svg" alt="menu" class="menu-icon">
-            </label>
-            <nav class="navbar">
-                <ul>
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="about.php">Nosotros</a></li>
-                <li><a href="index.php#services">Servicios</a></li>
-                <li><a href="index.php#projects">Proyectos</a></li>
-                <li><a href="index.php#gallery">Galería</a></li>
-                <li><a href="index.php#contact">Contáctenos</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header class="header">
+        <a href="#"><img src="public/img/logo.png" class="logo" alt="Logo"></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <nav class="navbar">
+            <a href="index.php" class="active">Inicio</a>
+            <a href="about.php">Nosotros</a>
+            <a href="index.php#services">Servicios</a>
+            <a href="index.php#projects">Proyectos</a>
+            <a href="index.php#gallery">Galeria</a>
+            <a href="index.php#contact">Contactenos</a>
+            <a href="views/login.php" class="btn-admon">Admon</a>
+            <span class="active-nav"></span>
+        </nav>
     </header>
+    
     <?php for($i=0;$i<sizeof($mproj);$i++): ?>
 
     <input type="hidden" name="pro_id" id="pro_id" value="<?php echo $_GET['pro_id'] ?>">
@@ -52,7 +48,7 @@
     </section>
     <section class="project_detalle2 container">
         <div class="project_detalle2-img">
-            <img src="public/img/project01.jpg" alt="Foto de la empresa">
+            <img src="public/img/proyectos/<?php echo $mproj[$i]["pro_imagen"] ?>" alt="Foto de la empresa">
         </div>
         <div class="project_detalle2-content">
             <div class="box">
@@ -110,40 +106,15 @@
     </section>
     
     <footer class="footer">
-    <div class="footer-information container">
-      <div class="footer-horario">
-        <div>
-          <h3>Horarios de atención</h3>
-          <p><span>Lunes a Viernes:</span> <br>7:30am - 12:00pm y 13:30pm - 17:00pm</p>
-          <p><span>Sábados, Domingos y festivos:</span>  <br>8:00am - 17:00pm jornada continua</p>
+        <div class="footer-information container">
+        <?php require_once("views/modulos/info_footer.php");?>
         </div>
-      </div>
-      <div class="footer-links">
-        <div>
-          <i class='bx bxs-phone-call'></i>
-          <a href="tel:+573214614550">+57 316 740 54 56</a>
+        <div class="copy">
+        <?php require_once("views/modulos/copy.php");?>
         </div>
-        <div>
-          <i class='bx bxl-whatsapp'></i>
-          <a href="tel:+573214614550">+57 316 833 12 71</a>
-        </div>  
-        <div>
-          <i class='bx bxs-envelope'></i>
-          <a href="mailto:ventasvillaesperanza@gmail.com">ventasvillaesperanza@gmail.com</a>
-        </div>
-      </div>
-    </div>
-    <div class="copy">
-      <?php require_once("views/modulos/copy.php");?>
-    </div>
   </footer>
   <script src="public/js/client.js"></script>
-  <script type="text/javascript">
-    window.addEventListener("scroll",function(){
-      var header = document.querySelector(".menu");
-      header.classList.toggle("header-scrolled2",window.scrollY > 0);
-    })
-  </script>
+  <script src="public/js/menu.js"></script>
   <script>
         ScrollReveal({ 
             reset: true,

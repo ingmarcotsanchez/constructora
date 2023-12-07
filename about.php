@@ -4,27 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Constructores e Ingenieros</title>
-    <?php require_once("views/modulos/head-web.php");?>
+    <?php require_once("views/modulos/head-about.php");?>
 </head>
 <body>
-    <header class="header-about" id="header">
-        <div class="menu container">
-            <a href="index.php" class="logo"><img src="public/img/logo.png" alt="logo de la empresa"></a>
-            <input type="checkbox" id="menu">
-            <label for="menu">
-                <img src="public/img/menu.svg" alt="menu" class="menu-icon">
-            </label>
-            <nav class="navbar">
-                <ul>
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="about.php">Nosotros</a></li>
-                <li><a href="index.php#services">Servicios</a></li>
-                <li><a href="index.php#projects">Proyectos</a></li>
-                <li><a href="index.php#gallery">Galería</a></li>
-                <li><a href="index.php#contact">Contáctenos</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header class="header">
+        <a href="#"><img src="public/img/logo.png" class="logo" alt="Logo"></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <nav class="navbar">
+            <a href="index.php" class="active">Inicio</a>
+            <a href="about.php">Nosotros</a>
+            <a href="index.php#services">Servicios</a>
+            <a href="index.php#projects">Proyectos</a>
+            <a href="index.php#gallery">Galeria</a>
+            <a href="index.php#contact">Contactenos</a>
+            <a href="views/login.php" class="btn-admon">Admon</a>
+            <span class="active-nav"></span>
+        </nav>
     </header>
     <section class="about column container" id="about">
         <div class="about-img">
@@ -57,14 +52,14 @@
         <div class="experience-content">
             <h2>9 años de experiencia</h2>
             <p class="text-parrafo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error numquam porro nobis eaque tenetur architecto corrupti incidunt ad repellat laborum? Ad suscipit sed vel perspiciatis esse nam, repellat eius id?</p>
-            <a href="#" class="btn btn-contact">Contáctenos</a>
+            <a href="index.php#contact" class="btn btn-contact">Contáctenos</a>
         </div>
     </section>
     <section class="subscribe">
         <div class="subscribe-content container">
             <h3>Realice una consulta con un asesor.</h3>
             <p>Llamanos al siguiente número <strong><a href="tel:+573214614550">314 333 2345</a></strong></p>
-            <a href="https://wa.me/3167405456" target="_blank" class="btn btn-subscribe">Agende una cita!</a>
+            <a href="https://wa.me/3167405456" target="_blank" class="btn btn-subscribe"><i class='bx bxl-whatsapp'></i>Agende una cita!</a>
         </div>
     </section>
     <section class="clients">
@@ -103,39 +98,14 @@
     </section>
     <footer class="footer">
     <div class="footer-information container">
-      <div class="footer-horario">
-        <div>
-          <h3>Horarios de atención</h3>
-          <p><span>Lunes a Viernes:</span> <br>7:30am - 12:00pm y 13:30pm - 17:00pm</p>
-          <p><span>Sábados, Domingos y festivos:</span>  <br>8:00am - 17:00pm jornada continua</p>
-        </div>
-      </div>
-      <div class="footer-links">
-        <div>
-          <i class='bx bxs-phone-call'></i>
-          <a href="tel:+573214614550">+57 316 740 54 56</a>
-        </div>
-        <div>
-          <i class='bx bxl-whatsapp'></i>
-          <a href="tel:+573214614550">+57 316 833 12 71</a>
-        </div>  
-        <div>
-          <i class='bx bxs-envelope'></i>
-          <a href="mailto:ventasvillaesperanza@gmail.com">ventasvillaesperanza@gmail.com</a>
-        </div>
-      </div>
+      <?php require_once("views/modulos/info_footer.php");?>
     </div>
     <div class="copy">
       <?php require_once("views/modulos/copy.php");?>
     </div>
   </footer>
   <script src="public/js/client.js"></script>
-  <script type="text/javascript">
-    window.addEventListener("scroll",function(){
-      var header = document.querySelector(".menu");
-      header.classList.toggle("header-scrolled2",window.scrollY > 0);
-    })
-  </script>
+  <script src="public/js/menu.js"></script>
   <script>
         ScrollReveal({ 
             reset: true,

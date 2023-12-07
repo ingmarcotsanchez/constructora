@@ -17,37 +17,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php echo $titulo; ?></title>
-  <?php require_once("views/modulos/head-web.php");?>
+  <?php require_once("views/modulos/head-index.php");?>
 </head>
 <body>
-  <header class="header" id="header">
-    <div class="menu container" id="navbar">
-      <a href="index.php" class="logo"><img src="public/img/logo.png" alt="logo de la empresa"></a>
-      <input type="checkbox" id="menu">
-      <label for="menu">
-        <img src="public/img/menu.svg" alt="menu" class="menu-icon">
-      </label>
-      <nav class="navbar">
-        <ul>
-          <li><a href="index.php">Inicio</a></li>
-          <li><a href="about.php">Nosotros</a></li>
-          <li><a href="#services">Servicios</a></li>
-          <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#gallery">Galería</a></li>
-          <li><a href="#contact">Contáctenos</a></li>
-          <li><a class="btn-admon" href="views/login.php">Administración</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="header-content container">
-      <div class="header-text">
-        <h1>Constructores e Ingenieros</h1>
-        <h2>G & G SAS</h2>
-        <p class="text-parrafo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error numquam porro nobis eaque tenetur architecto corrupti incidunt ad repellat laborum? Ad suscipit sed vel perspiciatis esse nam, repellat eius id?</p>
-        <a href="https://wa.me/3167405456" target="_blank" class="btn btn-cite"><i class='bx bxl-whatsapp'></i> Agendar una cita</a>
-      </div>
-    </div>
-  </header>
+  <header class="header">
+        <a href="#"><img src="public/img/logo.png" class="logo" alt="Logo"></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <nav class="navbar">
+            <a href="#home" class="active">Inicio</a>
+            <a href="about.php">Nosotros</a>
+            <a href="#services">Servicios</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#gallery">Galeria</a>
+            <a href="#contact">Contactenos</a>
+            <a href="views/login.php" class="btn-admon">Admon</a>
+
+            <span class="active-nav"></span>
+          
+        </nav>
+    </header>
+    <section class="home show-animate" id="home">
+        <div class="home-content">
+            <h1 >Constructores e <span>Ingenieros</span></h1>
+            <h3>G & G SAS</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni optio, explicabo inventore ipsum iusto adipisci commodi iste corrupti maxime quidem placeat voluptate odio quis molestiae, itaque aperiam cupiditate veritatis quos.
+            Cupiditate reprehenderit totam non error eveniet.</p>
+            
+            <div class="btn-box">
+              <div class="home-social"><!--social_media-->
+                  <a href="#"target="_blank"><i class='bx bxl-facebook'></i></a>
+                  <a href="#"target="_blank"><i class='bx bxl-instagram'></i></a>
+                  <a href="https://wa.me/3167405456"target="_blank" ><i class='bx bxl-whatsapp'></i></a>
+              </div>
+            </div>
+        </div>
+    </section>
   <section id="services" class="services">
     <div class="services-content container">
       <h2 class="titles">Servicios</h2>
@@ -210,40 +214,15 @@
   </section>
   <footer class="footer">
     <div class="footer-information container">
-      <div class="footer-horario">
-        <div>
-          <h3>Horarios de atención</h3>
-          <p><span>Lunes a Viernes:</span> <br>7:30am - 12:00pm y 13:30pm - 17:00pm</p>
-          <p><span>Sábados, Domingos y festivos:</span>  <br>8:00am - 17:00pm jornada continua</p>
-        </div>
-      </div>
-      <div class="footer-links">
-        <div>
-          <i class='bx bxs-phone-call'></i>
-          <a href="tel:+573214614550">+57 316 740 54 56</a>
-        </div>
-        <div>
-          <i class='bx bxl-whatsapp'></i>
-          <a href="tel:+573214614550">+57 316 833 12 71</a>
-        </div>  
-        <div>
-          <i class='bx bxs-envelope'></i>
-          <a href="mailto:ventasvillaesperanza@gmail.com">ventasvillaesperanza@gmail.com</a>
-        </div>
-      </div>
+      <?php require_once("views/modulos/info_footer.php");?>
     </div>
     <div class="copy">
       <?php require_once("views/modulos/copy.php");?>
     </div>
   </footer>
+<script src="public/js/menu.js"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
-  <script type="text/javascript">
-    window.addEventListener("scroll",function(){
-      var header = document.querySelector(".menu");
-      header.classList.toggle("header-scrolled",window.scrollY > 0);
-    })
-   
-  </script>
+
   <script src="/constructora/public/js/index.js"></script>
   <script>
     function detalle_proyecto(pro_id){
@@ -258,7 +237,7 @@
             duration: 2500,
             delay:400
          });
-         ScrollReveal().reveal('.header-text', { delay: 500, origin:'up' });
+         ScrollReveal().reveal('.home-content', { delay: 500, origin:'up' });
          ScrollReveal().reveal('.box', { delay: 600, origin:'bottom' });
          ScrollReveal().reveal('.titles', { delay: 700, origin:'left' });
          ScrollReveal().reveal('.experience-content', { delay: 700, origin:'right' });
