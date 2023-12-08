@@ -6,16 +6,22 @@
     </div>
 </div>
 <div class="footer-links">
-    <div>
-        <i class='bx bxs-phone-call'></i>
-        <a href="tel:+573214614550">+57 316 740 54 56</a>
+    <div class="titulo">
+      <h3>Atención al Cliente</h3>  
     </div>
-    <div>
-        <i class='bx bxl-whatsapp'></i>
-        <a href="https://wa.me/3167405456" target="_blank">+57 316 833 12 71</a>
-    </div>  
-    <div>
-        <i class='bx bxs-envelope'></i>
-        <a href="mailto:ventasvillaesperanza@gmail.com">ventasvillaesperanza@gmail.com</a>
+    <div class="informacion">
+        <div>
+            <i class='bx bxs-phone-call'></i>
+            <a href="tel:+573214614550">+57 316 740 54 56</a>
+        </div>
+        <div>
+            <i class='bx bxl-whatsapp'></i>
+            <a href="https://wa.me/3167405456" target="_blank">+57 316 833 12 71</a>
+        </div>  
+        <div>
+            <i class='bx bxs-envelope'></i>
+            <a href="mailto:ventasvillaesperanza@gmail.com">ventasvillaesperanza@gmail.com</a>
+        </div>   
     </div>
+    
 </div>

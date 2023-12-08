@@ -97,6 +97,19 @@ h3{
     border-radius: 10px; 
     border: 0;
 }
+.btn-admon{
+    padding: 5px 10px;
+    background:linear-gradient(
+        90deg,
+        rgba(245,99,72,1)0%,
+        rgba(254,144,32,1)100%
+    );
+    font-size: 1.2rem;
+    font-family: var(--roboto);
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+}
 .btn-subscribe{
     border: 2px solid var(--white);
 }
@@ -249,68 +262,6 @@ h3{
 .carousel img:first-child {
     margin-left: 0px;
 }
-footer{
-    background-color: #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    color: #161515;
-    font-family: var(--roboto);
-}
-footer .footer-information{
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(2,1fr);
-    gap: 1rem;
-    text-align: center;
-}
-.footer-information .footer-horario{
-    display: flex;
-    flex-direction: column;
-}
-.footer-information .footer-horario h3{
-    color: #161515;
-    font-size: 1.6rem;
-    text-align: left;
-}
-.footer-information .footer-horario p{
-    text-align: left;
-}
-.footer-information .footer-horario p span{
-    font-family: var(--roboto);
-}
-.footer-information .footer-links{
-    display: flex;
-    flex-direction: row;
-}
-.footer-information .footer-links div{
-    display: flex;
-    flex-direction: column;
-    margin-right: 15px;
-}
-.footer-information div .bx{
-    color: #F28737;
-    font-size: 2.1rem;
-    text-align: center;
-}
-.footer-information div a, .footer-information div p{
-    font-size: 1rem;
-    color: #161515;
-    font-family: var(--poppins);
-}
-.copy{
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #F28737;
-    color: #f0f0f0;
-}
-.copy .social a{
-    font-size: 1.3rem;
-}
-
-
 .header {
     background-color: #ededed;
     position: fixed;
@@ -357,8 +308,67 @@ footer .footer-information{
     color: #fff;
     display: none;
   }
+  footer{
+    background-color: #ededed;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(500px,auto));
+    align-items: center;
+    z-index: 100;
+    transition: 0.3s;
+    color: #000000;
+}
+.footer-horario{
+    height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.footer-horario h3{
+    font-family: var(--exo);
+    color: #F28737;
+}
+.footer-horario span{
+    font-family: var(--exo);
+}
+.footer-links{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+.footer-links .titulo{
+    margin-top: 20px;
+}
+.footer-links .titulo h3{
+    color: #F28737;
+}
+.informacion div .bx{
+    color: #F28737;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.informacion div a{
+    font-size: 1.2rem;
+    color: #161515;
+    font-family: var(--poppins);
+}
+.copy{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F28737;
+    color: #f0f0f0;
+}
+.copy .social a{
+    font-size: 1.3rem;
+}
 
-  @media(max-width:1030px){
+  @media(max-width:1100px){
     .header {
         background-color: #06070759;
       }
@@ -427,37 +437,13 @@ footer .footer-information{
         grid-column-start: span 1;
     }
     
-    footer .footer-information{
-        grid-template-columns: repeat(1,1fr);
+    footer{
+        padding: 0;
         width: 100%;
-    }
-    .footer-information .footer-horario{
-        display: block;
-        width: 100%;
-    }
-    .footer-information .footer-horario h3{
-        font-size: 1.4rem;
-        text-align: center;
-    }
-    .footer-information .footer-horario p{
-        text-align: center;
-    }
-    .footer-information .footer-links{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .footer-information .footer-links div{
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        margin-left: 50px;
-    }
-    .footer-information .footer-links div .bx{
-        font-size: 1.4rem;
-        margin-right: 10px;
+        grid-template-columns: repeat(auto-fit,minmax(500px,auto));
     }
 }
+/*
 @media(max-width:900px){
     .about{
         grid-template-columns: repeat(4,1fr);
@@ -472,11 +458,29 @@ footer .footer-information{
     .about-content{
         grid-column: 3/-1;
     }
+    .footer-horario{
+        justify-content: center;
+    }
+    .footer-links .titulo{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .informacion{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
 }
-@media (max-width: 770px){
-    .footer-information .footer-links div{
-        margin-left: 20px;
-    } 
+@media(max-width:800px){
+    .copy{
+        flex-direction: column;
+    }
+}
+@media(max-width:700px){
+    .informacion{
+        flex-direction: column;
+    }  
 }
 @media (max-width: 600px){
    .column{
@@ -487,7 +491,6 @@ footer .footer-information{
     .about{
         max-height: auto;
         width: 100%;
-        background-color: aqua;
     }
     .about-img,
     .about-content{
@@ -587,17 +590,15 @@ footer .footer-information{
     .carousel img:first-child {
         margin-left: 0px;
     }
-
-
-    .footer-information .footer-links{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .copy{
-        padding: 10px;
-        flex-direction: column;
-        text-align: center;
-    }
    
 }
+@media (max-width: 550px){
+    .about-content h2{
+        font-size: 3.5rem;
+        margin-left: 50px;
+    } p.text-parrafo{
+        text-align: center;
+        font-size: 1rem;
+        margin-left: 50px;
+    }
+}*/

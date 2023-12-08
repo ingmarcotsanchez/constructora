@@ -213,13 +213,12 @@
     </div>
   </section>
   <footer class="footer">
-    <div class="footer-information container">
-      <?php require_once("views/modulos/info_footer.php");?>
-    </div>
+            <?php require_once("views/modulos/info_footer.php");?>
+    
+    </footer>
     <div class="copy">
-      <?php require_once("views/modulos/copy.php");?>
+        <?php require_once("views/modulos/copy.php");?>
     </div>
-  </footer>
 <script src="public/js/menu.js"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 
