@@ -21,7 +21,7 @@
             <span class="active-nav"></span>
         </nav>
     </header>
-    <section class="about column container" id="about">
+    <section class="about container" id="about">
         <div class="about-img">
             <img src="public/img/about.jpg" alt="imagen de la empresa">
         </div>
@@ -30,8 +30,9 @@
             <p class="text-parrafo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error numquam porro nobis eaque tenetur architecto corrupti incidunt ad repellat laborum? Ad suscipit sed vel perspiciatis esse nam, repellat eius id?</p>
         </div>
     </section>
-    <section class="experience row flex container">
-        <div class="experience-cards row">
+    
+    <section class="experience flex container">
+        <div class="experience-cards">
             <div class="e-card">
                 <h3>3</h3>
                 <p>Proyectos</p>
@@ -55,6 +56,7 @@
             <a href="index.php#contact" class="btn btn-contact">Contáctenos</a>
         </div>
     </section>
+    
     <section class="subscribe">
         <div class="subscribe-content container">
             <h3>Realice una consulta con un asesor.</h3>
@@ -62,6 +64,7 @@
             <a href="https://wa.me/3167405456" target="_blank" class="btn btn-subscribe"><i class='bx bxl-whatsapp'></i>Agende una cita!</a>
         </div>
     </section>
+    
     <section class="clients">
         <div class="clients-content container">
             <div class="clients-txt">
@@ -96,6 +99,7 @@
             </div>
         </div>
     </section>
+
     <footer class="footer">
             <?php require_once("views/modulos/info_footer.php");?>
     
